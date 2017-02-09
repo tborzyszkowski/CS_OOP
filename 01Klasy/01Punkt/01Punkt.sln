@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01Punkt", "01Punkt.csproj",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02Osoba", "..\02Osoba\02Osoba.csproj", "{5337EB09-84C0-41B0-9A6F-B54193242EC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03Structures", "03Structures\03Structures.csproj", "{16FFED0C-C42B-4465-8206-8D5189DDFC0D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03Structures", "..\03Structures\03Structures.csproj", "{16FFED0C-C42B-4465-8206-8D5189DDFC0D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
