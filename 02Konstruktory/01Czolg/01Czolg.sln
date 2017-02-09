@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01Czolg", "01Czolg.csproj", "{9C3C361C-439D-41E8-8A50-D67C544B163A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02KolejnoscInicjalizacji", "..\02KolejnoscInicjalizacji\02KolejnoscInicjalizacji.csproj", "{ED8FC456-D6BA-438F-B8CD-A4C7EC673418}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9C3C361C-439D-41E8-8A50-D67C544B163A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C3C361C-439D-41E8-8A50-D67C544B163A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C3C361C-439D-41E8-8A50-D67C544B163A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED8FC456-D6BA-438F-B8CD-A4C7EC673418}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED8FC456-D6BA-438F-B8CD-A4C7EC673418}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED8FC456-D6BA-438F-B8CD-A4C7EC673418}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED8FC456-D6BA-438F-B8CD-A4C7EC673418}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
