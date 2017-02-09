@@ -1,4 +1,4 @@
-Zadania 1
+Zadanie 1
 -------------
 Wzoruj¹c siê na przyk³adzie 01Czolg stworzyæ zestaw klas o podobnej funkcjonalnoœci dotycz¹cy samochodu.
 Samochód posiada:

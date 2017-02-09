@@ -1,4 +1,4 @@
-Zadania 1
+Zadanie 1
 -------------
 Dodaj do klasy Punkt z projektu 01Punkt:
 - metodê klasy Punkt wyliczaj¹c¹ odleg³oœæ punktu od pocz¹tku uk³adu wspó³rzêdnych
