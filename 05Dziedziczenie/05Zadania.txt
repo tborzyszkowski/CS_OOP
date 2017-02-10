@@ -1,0 +1,8 @@
+Zadanie 1
+-------------
+Opieraj¹c siê na klasie Punkt utworzyæ klasê Ponkt3D dziedzicz¹c¹ po klasie Punkt, która ma reprezentowaæ punkt w przestrzeni 3D.
+Dodaæ odpowiedniki metod klasy Punkt w przestrzeni 3D.
+Co stanie siê po rzutowaniu obiektu klasy 3D "w górê".
+
+ 
+
