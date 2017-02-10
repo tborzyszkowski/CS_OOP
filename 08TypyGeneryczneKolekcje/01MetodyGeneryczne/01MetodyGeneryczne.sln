@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01MetodyGeneryczne", "01MetodyGeneryczne.csproj", "{C1B8A8BB-8437-4BFB-A54B-90B0EDD7D038}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02ListComparer", "..\02ListComparer\02ListComparer.csproj", "{B195E15D-CD90-49C7-B627-6F3C4ECC11EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03SortedDictionary", "..\03SortedDictionary\03SortedDictionary.csproj", "{D17B853C-9D0A-491D-9828-47A566168190}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C1B8A8BB-8437-4BFB-A54B-90B0EDD7D038}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1B8A8BB-8437-4BFB-A54B-90B0EDD7D038}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1B8A8BB-8437-4BFB-A54B-90B0EDD7D038}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1B8A8BB-8437-4BFB-A54B-90B0EDD7D038}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B195E15D-CD90-49C7-B627-6F3C4ECC11EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B195E15D-CD90-49C7-B627-6F3C4ECC11EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B195E15D-CD90-49C7-B627-6F3C4ECC11EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B195E15D-CD90-49C7-B627-6F3C4ECC11EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D17B853C-9D0A-491D-9828-47A566168190}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D17B853C-9D0A-491D-9828-47A566168190}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D17B853C-9D0A-491D-9828-47A566168190}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D17B853C-9D0A-491D-9828-47A566168190}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
