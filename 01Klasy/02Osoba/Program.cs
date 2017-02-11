@@ -25,9 +25,11 @@ namespace _02Osoba {
 
             #region Zadanie 2
             m.Zapisz();
+            k.Zapisz();
             m.Zapisz();
-            m.Zapisz();
-            Console.WriteLine("Ilość zapisów do pliku: {0}", m.PobierzLiczbeZapisow());
+            k.Zapisz();
+            Console.WriteLine("m: Ilość zapisów do pliku: {0}", m.PobierzLiczbeZapisow());
+            Console.WriteLine("k: Ilość zapisów do pliku: {0}", k.PobierzLiczbeZapisow());
 
             #endregion
         }
