@@ -44,7 +44,7 @@ namespace _01Czolg {
             Console.WriteLine("Klon:     {0}", klon2.PobierzInformacje());
 
             #endregion
-
+            Console.ReadKey();
         }
     }
 }
