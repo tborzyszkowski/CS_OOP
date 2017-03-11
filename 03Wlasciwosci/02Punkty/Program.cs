@@ -17,7 +17,7 @@ namespace _02Punkty {
                     return x;
                 else if (nazwaWsp == "y")
                     return y;
-                else return -1;
+                else return x + y;
             }
         }
     }

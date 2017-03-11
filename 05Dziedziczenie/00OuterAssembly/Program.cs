@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _00OuterAssembly {
     public class Zewnetrzna {
-        internal void f() {
+        internal protected void f() {
             Console.WriteLine("Outside.Zewnetrzna.f()");
         }
     }

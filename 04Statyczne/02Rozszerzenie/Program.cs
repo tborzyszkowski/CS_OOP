@@ -20,8 +20,8 @@ namespace _02Rozszerzenie {
     class Program {
         static void Main(string[] args) {
             double x = 10;
-            Console.WriteLine("{0} do potęgi drugiej: {1}", x, x.PotegaCalkowita(2));
-            Console.WriteLine("{0} do potęgi minus drugiej: {1}", 10, (10.0).PotegaCalkowita(-2));
+            Console.WriteLine("{0} do potęgi drugiej: {1}", x, x.PotegaCalkowita(2).PotegaCalkowita(4));
+            Console.WriteLine("{0} do potęgi minus drugiej: {1}", 10, (10.0).PotegaCalkowita(-2).PotegaCalkowita(-1));
             Console.ReadKey();
         }
     }
