@@ -13,8 +13,7 @@ namespace _03KolejnoscKonstrukcji {
             Console.WriteLine("Konstruktor z A()");
         }
     }
-    class BK : AK
-    {
+    class BK : AK {
         public BK(int i) : base(i + 1) {
             Console.WriteLine("Konstruktor z B: {0}", i);
         }
@@ -25,7 +24,7 @@ namespace _03KolejnoscKonstrukcji {
     class CK : BK {
         public CK(int i) //: base(2 * i) 
             {
-            
+
             Console.WriteLine("Konstruktor z C: {0}", i);
         }
     }
