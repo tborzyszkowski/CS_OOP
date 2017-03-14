@@ -12,17 +12,14 @@ namespace _01PolePowierzchni {
         }
 
         public double MetrKwadratowy { set; get; }
-        public double Ar
-        {
+        public double Ar {
             set { MetrKwadratowy = 100 * value; }
             get { return MetrKwadratowy / 100; }
         }
-        public double Hektar
-        {
+        public double Hektar {
             set { MetrKwadratowy = 10000 * value; }
             get { return MetrKwadratowy / 10000; }
         }
-
     }
     class Pole {
         static void Main(string[] args) {
