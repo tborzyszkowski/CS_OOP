@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace _02Punkty {
     public class Punkt {
-        int x = 1;
-        int y = 2;
+        private int x = 1;
+        private int y = 2;
 
         public int this[string nazwaWsp] {
             get {
