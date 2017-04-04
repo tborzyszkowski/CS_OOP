@@ -22,6 +22,8 @@ namespace _04WczesnaImplementacja {
             b.f();
             ((A)b).f();
             ((Interface1)b).f();
+            A a = new A();
+            Interface1 ii = b;
         }
     }
 }

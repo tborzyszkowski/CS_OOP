@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace _01Base {
     abstract class NextBase {
         public abstract int Nastepny(int n);
-        public int ZwieksODwa(int n) {
+        public int ZwiekszODwa(int n) {
             return Nastepny(Nastepny(n));
         }
     }
@@ -34,10 +34,10 @@ namespace _01Base {
             ODwa od = new ODwa();
 
             nb = oj;
-            Console.WriteLine("A: {0}, {1}", nb.Nastepny(1), nb.ZwieksODwa(1));
+            Console.WriteLine("A: {0}, {1}", nb.Nastepny(1), nb.ZwiekszODwa(1));
 
             nb = od;
-            Console.WriteLine("B: {0}, {1}", nb.Nastepny(1), nb.ZwieksODwa(1));
+            Console.WriteLine("B: {0}, {1}", nb.Nastepny(1), nb.ZwiekszODwa(1));
         }
     }
 }
