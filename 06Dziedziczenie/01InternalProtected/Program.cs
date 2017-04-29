@@ -13,12 +13,12 @@ namespace _01InternalProtected {
             Console.WriteLine("InternalProtected.Wewnetrzna.g()");
         }
     }
-    class Wewnetrzna : Zewnetrzna {
-        internal void g() {
-            f();
-            Console.WriteLine("InternalProtected.Wewnetrzna.g()");
-        }
-    }
+    //class Wewnetrzna : Zewnetrzna {
+    //    internal void g() {
+    //        f();
+    //        Console.WriteLine("InternalProtected.Wewnetrzna.g()");
+    //    }
+    //}
     class Program {
         static void Main(string[] args) {
             Wewnetrzna w = new Wewnetrzna();
