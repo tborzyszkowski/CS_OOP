@@ -12,7 +12,7 @@ namespace _01Czolg {
             Dzialo dz1 = new Dzialo(78);
 
             Czolg czolg1 = new Czolg(100, "Czolg 1", dz1, p1);
-            Czolg czolg2 = new Czolg(102);
+            Czolg czolg2 = new Czolg();
             Czolg czolg3 = new Czolg(103, "Czolg 3", 83.5, 10, 34);
             Console.WriteLine(czolg1.PobierzInformacje());
             Console.WriteLine(czolg2.PobierzInformacje());

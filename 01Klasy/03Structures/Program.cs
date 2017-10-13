@@ -12,7 +12,7 @@ namespace _03Structures {
     struct First {
         public int x;
     }
-
+    
     class Program {
         static void Main(string[] args) {
             Pierwsza p1 = new Pierwsza();

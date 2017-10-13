@@ -32,6 +32,9 @@ namespace _01Czolg {
         public Czolg(int nrCzolgu)
             : this(nrCzolgu, "Rudy") {
         }
+        public Czolg()
+            : this(102) {
+        }
 
         public string PobierzInformacje() {
             return string.Format("Czołg\n nr:   {0}\n o nazwie: {1}\n kaliber działa: {2}\n znajduje się w punkcie: ({3}; {4})\n",
