@@ -33,6 +33,9 @@ namespace _01Statyczne {
             p.wypisz();
             Console.WriteLine("Pierwsza.a = {0}", Pierwsza.a);
 
+            Pierwsza q = new Pierwsza(12, 13);
+            q.wypisz();
+            Console.WriteLine($"Pierwsza.a = {Pierwsza.a}");
         }
     }
 }

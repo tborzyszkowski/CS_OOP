@@ -19,11 +19,10 @@ namespace _03DniTygodnia {
         }
 
         public int this[string day] {
-            get {
-                return (GetDay(day));
-            }
+            get => GetDay(day);
         }
     }
+
 
     class Program {
         static void Main(string[] args) {
