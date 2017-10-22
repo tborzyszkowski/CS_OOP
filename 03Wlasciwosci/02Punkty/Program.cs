@@ -28,11 +28,11 @@ namespace _02Punkty {
     class Program {
         static void Main(string[] args) {
             Punkt p = new Punkt();
-            Console.WriteLine("x = {0}\ny = {1}\nz = {2}", p["x"], p["y"], p["z"]);
+            Console.WriteLine($"x = {p["x"]}\ny = {p["y"]}\nz = {p["z"]}");
             p["x"] = 10;
             p["y"] = 20;
             p["z"] = 3000;
-            Console.WriteLine("x = {0}\ny = {1}\nz = {2}", p["x"], p["y"], p["z"]);
+            Console.WriteLine($"x = {p["x"]}\ny = {p["y"]}\nz = {p["z"]}");
         }
     }
 }
