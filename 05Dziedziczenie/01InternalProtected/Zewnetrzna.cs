@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _01InternalProtected{ //Outside {
+namespace _01InternalProtected{ 
+    //Outside {
     class Zewnetrzna {
-        internal  void f() {
+        internal  void ff() {
             Console.WriteLine("Outside.Zewnetrzna.f()");
         }
     }

@@ -45,6 +45,9 @@ namespace _04ZgodnoscTypow {
             B pb2 = (B)pa;
             Console.WriteLine(pb2.zawartosc());
             Console.WriteLine(pb2.GetType());
+
+            A pa2 = (A)(new B());
+            Console.WriteLine(pa2.GetType());
         }
     }
 }
