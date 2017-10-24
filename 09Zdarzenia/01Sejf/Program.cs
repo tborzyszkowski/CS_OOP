@@ -43,9 +43,8 @@ namespace ConsoleApplication1 {
         }
         public void GonZlodzieja(object sender, AlarmEventArgs e) {
             Sejf s = (Sejf)sender;
-            Console.WriteLine("Strażnik: {0} {1} przyjął zgłoszenie " +
-            "sejfu pana(i) {2}. Alarm: {3}.",
-            imie, nazwisko, s.Czyj, e.Kiedy.ToString());
+            Console.WriteLine(
+             $"Strażnik: {imie} {nazwisko}: sejfu pana(i) {s.Czyj}. Alarm: {e.Kiedy}.");
         }
     }
 
