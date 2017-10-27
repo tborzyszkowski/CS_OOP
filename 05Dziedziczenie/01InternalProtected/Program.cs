@@ -13,7 +13,7 @@ namespace _01InternalProtected {
     //        Console.WriteLine("InternalProtected.Wewnetrzna.g()");
     //    }
     //}
-    class Wewnetrzna : Zewnetrzna {
+    class Wewnetrzna : ZewnetrznaOuter {
         internal void g() {
             f();
             Console.WriteLine("InternalProtected.Wewnetrzna.g()");

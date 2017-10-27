@@ -11,7 +11,7 @@ namespace _04Zoo {
         }
         public override string NazwaLacinska
         {
-            get { return "Equus asinus"; }
+            get => "Equus asinus";
         }
         public override string ToString() {
             return "osioł";
