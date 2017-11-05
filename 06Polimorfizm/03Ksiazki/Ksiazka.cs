@@ -33,7 +33,7 @@ namespace _03Ksiazki {
             if (obj == null) return false;
             if (this.GetType() != obj.GetType()) return false;
             Ksiazka k = (Ksiazka)obj;
-            if (Isbn != null || k.Isbn != null) {
+            if (Isbn != null && k.Isbn != null) {
                 if (Isbn == k.Isbn)
                     return true;
                 else

@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace _01Instrumenty {
     class Instrument {
+        protected int waga = 0;
         public void Graj1() {
-            Console.WriteLine("Cisza");
+            Console.WriteLine("Graj1: Cisza");
         }
         public virtual void Graj2() {
-            Console.WriteLine("Cisza 2!!!");
+            Console.WriteLine("Graj2: Cisza 2!!!");
+        }
+        public override bool Equals(object o) {
+            return this.waga == (o as Instrument)?.waga;
         }
     }
 }

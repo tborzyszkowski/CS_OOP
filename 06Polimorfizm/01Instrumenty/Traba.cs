@@ -6,11 +6,17 @@ using System.Threading.Tasks;
 
 namespace _01Instrumenty {
     class Traba : Instrument {
+        public Traba() {
+            this.waga = 2;
+        }
         public new void Graj1() {
-            Console.WriteLine("Tra ta ta, tra ta ta");
+            Console.WriteLine("Graj1: Tra ta ta, tra ta ta");
         }
         public override void Graj2() {
-            Console.WriteLine("Tra ta ta, tra ta ta");
+            Console.WriteLine("Graj2: Tra ta ta, tra ta ta");
+        }
+        public void Dmuchaj() {
+            Console.WriteLine("Dmuchaj: fju, fju");
         }
     }
 }

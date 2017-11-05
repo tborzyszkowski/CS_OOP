@@ -18,6 +18,8 @@ namespace _03Ksiazki {
 
             Console.WriteLine("GetHashCode: {0}", k1.GetHashCode());
             Console.WriteLine("ToString: {0}", k1);
+            Console.WriteLine("GetHashCode: {0}", k3.GetHashCode());
+            Console.WriteLine("ToString: {0}", k3);
         }
     }
 }
