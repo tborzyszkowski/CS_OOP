@@ -35,8 +35,10 @@ namespace _03JawnaImplementacja {
             IZolnierz zp = p;
             zp.Strzelaj();
 
-            (p as IPilkarz).Strzelaj();
-            (p as IZolnierz).Strzelaj();
+            p = null;
+            (p as IPilkarz)?.Strzelaj();
+            p = new Postac();
+            (p as IZolnierz)?.Strzelaj();
         }
     }
 }
