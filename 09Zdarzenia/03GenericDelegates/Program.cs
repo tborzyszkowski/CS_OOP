@@ -44,6 +44,6 @@ namespace _03GenericDelegates {
             gd.Proprety -= gd.PropEven;
             gd.Proprety += x => x % 2 == 1;
             Console.WriteLine(gd.Proprety(3));
-        }
+            }
     }
 }

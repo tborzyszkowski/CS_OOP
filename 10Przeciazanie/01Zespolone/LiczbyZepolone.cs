@@ -6,20 +6,11 @@ using System.Threading.Tasks;
 
 namespace _01Zespolone {
     public struct Zespolona {
-        private double re;
-
-        public double Re {
-            set { re = value; }
-            get { return re; }
-        }
-        private double im;
-        public double Im {
-            set { im = value; }
-            get { return im; }
-        }
+        public double Re { set; get; }
+        public double Im { set; get; }
         public Zespolona(double re, double im) {
-            this.re = re;
-            this.im = im;
+            this.Re = re;
+            this.Im = im;
         }
         public Zespolona(double re)
             : this(re, 0) {
@@ -32,53 +23,53 @@ namespace _01Zespolone {
             return x;
         }
         public static Zespolona operator -(Zespolona x) {
-            Zespolona y;
-            y.re = -x.re;
-            y.im = -x.im;
+            Zespolona y = new Zespolona();
+            y.Re = -x.Re;
+            y.Im = -x.Im;
             return y;
         }
         //operator ~ będzie wyznaczał liczbę sprzężoną
         public static Zespolona operator ~(Zespolona x) {
-            Zespolona y;
-            y.re = x.re;
-            y.im = -x.im;
+            Zespolona y = new Zespolona();
+            y.Re = x.Re;
+            y.Im = -x.Im;
             return y;
         }
         //operator ! będzie wyznaczał moduł liczby zespolone
         public static double operator !(Zespolona x) {
-            return Math.Sqrt(x.re * x.re + x.im * x.im);
+            return Math.Sqrt(x.Re * x.Re + x.Im * x.Im);
         }
 
         public static Zespolona operator +(Zespolona x, Zespolona y) {
-            Zespolona z;
-            z.re = x.re + y.re;
-            z.im = x.im + y.im;
+            Zespolona z = new Zespolona();
+            z.Re = x.Re + y.Re;
+            z.Im = x.Im + y.Im;
             return z;
         }
 
         public static Zespolona operator -(Zespolona x, Zespolona y) {
-            Zespolona z;
-            z.re = x.re - y.re;
-            z.im = x.im - y.im;
+            Zespolona z = new Zespolona();
+            z.Re = x.Re - y.Re;
+            z.Im = x.Im - y.Im;
             return z;
         }
 
         public static Zespolona operator *(Zespolona x, Zespolona y) {
-            Zespolona z;
-            z.re = x.re * y.re - x.im * y.im;
-            z.im = x.im * y.re + x.re * y.im;
+            Zespolona z = new Zespolona();
+            z.Re = x.Re * y.Re - x.Im * y.Im;
+            z.Im = x.Im * y.Re + x.Re * y.Im;
             return z;
         }
 
         public static Zespolona operator /(Zespolona x, Zespolona y) {
-            Zespolona z;
-            z.re = (x.re * y.re + x.im * y.im) / (y.re * y.re + y.im * y.im);
-            z.im = (x.im * y.re - x.re * y.im) / (y.re * y.re + y.im * y.im);
+            Zespolona z = new Zespolona();
+            z.Re = (x.Re * y.Re + x.Im * y.Im) / (y.Re * y.Re + y.Im * y.Im);
+            z.Im = (x.Im * y.Re - x.Re * y.Im) / (y.Re * y.Re + y.Im * y.Im);
             return z;
         }
 
         public static bool operator ==(Zespolona x, Zespolona y) {
-            return x.re == y.re && x.im == y.im;
+            return x.Re == y.Re && x.Im == y.Im;
         }
 
         public static bool operator !=(Zespolona x, Zespolona y) {
@@ -87,7 +78,7 @@ namespace _01Zespolone {
 
         public override bool Equals(object obj) {
             Zespolona y = (Zespolona)obj;
-            return this.re == y.re && this.im == y.im;
+            return this.Re == y.Re && this.Im == y.Im;
         }
         public override int GetHashCode() {
             return (int)!this;
@@ -99,9 +90,8 @@ namespace _01Zespolone {
 
         public static implicit operator Zespolona(double d) {
             Zespolona x = new Zespolona();
-            x.re = d;
+            x.Re = d;
             return x;
         }
-
     }
 }

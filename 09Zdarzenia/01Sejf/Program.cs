@@ -50,7 +50,7 @@ namespace ConsoleApplication1 {
 
     static class Syrena {
         public static void Wyj(object sender, AlarmEventArgs e) {
-            for(int i = 0; i < 1000; i++) {
+            for(int i = 0; i < 100; i++) {
                 Console.Beep(1000 + 10 * i, 10);
             }
             Console.WriteLine("BEEP \t BEEP \t BEEP");
