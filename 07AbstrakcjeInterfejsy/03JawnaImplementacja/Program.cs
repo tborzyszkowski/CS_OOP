@@ -13,7 +13,7 @@ namespace _03JawnaImplementacja {
     }
     class Postac : IZolnierz, IPilkarz {
         public void Strzelaj() {
-            Console.WriteLine("Strzelam gólnie");
+            Console.WriteLine("Strzelam ogólnie");
         }
         void IPilkarz.Strzelaj() {
             int x = 1;
