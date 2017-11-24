@@ -33,7 +33,7 @@ namespace _01IOBound {
             }
         }
         public async Task getPage() {
-            await Task.Run(() => result =  GetFirstCharactersCountAsync(50).Result);
+            await Task.Run(() => result =  GetFirstCharactersCountAsync(500).Result);
         }
     }
     class Program { 
@@ -43,7 +43,7 @@ namespace _01IOBound {
             ad.getPage();
             int count = 0;
             while(ad.result.Length == 0) {
-                //Console.Write(".");
+                Console.Write(".");
                 Thread.Sleep(1);
                 count++;
             }
