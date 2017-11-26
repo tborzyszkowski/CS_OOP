@@ -43,6 +43,7 @@ namespace _03GenericDelegates {
             gd.Relation += (x) => x < 3;
             Console.WriteLine(gd.Relation(1));
             gd.Relation += gd.PropEven;
+            Console.WriteLine(gd.Relation(1));
 
             gd.Proprety += gd.PropEven;
             Console.WriteLine(gd.Proprety(3));
@@ -50,7 +51,7 @@ namespace _03GenericDelegates {
             gd.Proprety += x => x % 2 == 1;
             Console.WriteLine(gd.Proprety(3));
 
-            AppFun(gd.Relation, 6);
+            Console.WriteLine(AppFun(gd.Relation, 6));
            // AppFun(gd.Proprety, 6);
 
         }

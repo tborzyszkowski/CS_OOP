@@ -93,5 +93,8 @@ namespace _01Zespolone {
             x.Re = d;
             return x;
         }
+        public override string ToString() {
+            return $"({this.Re}, {this.Im})";
+        }
     }
 }

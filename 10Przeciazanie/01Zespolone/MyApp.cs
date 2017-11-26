@@ -9,15 +9,13 @@ namespace _01Zespolone {
         static void Main(string[] args) {
             Zespolona z1 = new Zespolona(10, 12);
             Zespolona z2 = z1 + -2;
-            Console.WriteLine("{0} {1}", z2.Re, z2.Im);
+            Console.WriteLine($"{z1}");
+            Console.WriteLine($"{z2}");
 
             double x = 20;
             Zespolona z3 = x + 30;
-            Console.WriteLine("{0} {1}", z3.Re, z3.Im);
-            Console.WriteLine("{0}", (double)z3);
-
-            Console.ReadKey();
-
+            Console.WriteLine($"{z3}");
+            Console.WriteLine($"{(double)z3}");
         }
     }
 }
