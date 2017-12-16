@@ -10,7 +10,7 @@ namespace _02CPUBound {
         public double resultAsc = 100;
         private double DoExpensiveCalculation(double data) {
             double result = data;
-            while (result > 0.0000001) {
+            while (result > 0.000000001) {
                 result = result / 2;
                 //Thread.Sleep(1);
             }
@@ -39,7 +39,7 @@ namespace _02CPUBound {
 
             acpu.getResult();
             int count = 0;
-            while (acpu.resultAsc > 0.0001) {
+            while (acpu.resultAsc > 0.000001) {
                 //Console.Write(".");
                 Thread.Sleep(1);
                 count++;
