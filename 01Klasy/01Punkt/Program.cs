@@ -9,7 +9,7 @@ namespace _01Punkt {
         public double x = 0, y = 0;
 
         public void Wypisz() {
-            Console.WriteLine("({0}, {1})", x, y);
+            Console.WriteLine($"({x}, {y})");
         }
     }
     class Program {

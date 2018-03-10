@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank", "Bank\Bank.csproj", "{E699BD04-936C-43C6-926E-52C203EED34D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestKolejki", "TestKolejki\TestKolejki.csproj", "{55FE186D-3392-42B6-8622-F91669E9B99D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Punkt", "Punkt\Punkt.csproj", "{137935CD-2A2B-41E9-B5F3-A73EAB81532A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +23,15 @@ Global
 		{55FE186D-3392-42B6-8622-F91669E9B99D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55FE186D-3392-42B6-8622-F91669E9B99D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55FE186D-3392-42B6-8622-F91669E9B99D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{137935CD-2A2B-41E9-B5F3-A73EAB81532A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{137935CD-2A2B-41E9-B5F3-A73EAB81532A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{137935CD-2A2B-41E9-B5F3-A73EAB81532A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{137935CD-2A2B-41E9-B5F3-A73EAB81532A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {614B1CCF-C5A1-4E47-BDDB-9105E6318466}
 	EndGlobalSection
 EndGlobal
