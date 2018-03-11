@@ -22,6 +22,7 @@ namespace Punkt
             Console.WriteLine(p2);
             Console.WriteLine(p1.Odleglosc());
             Console.WriteLine(p2.Odleglosc());
+            Console.WriteLine(p1.OdlegloscDwa(p2));
         }
     }
 }
