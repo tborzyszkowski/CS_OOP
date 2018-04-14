@@ -33,12 +33,12 @@ namespace _03Ksiazki {
             if (obj == null) return false;
             if (this.GetType() != obj.GetType()) return false;
             Ksiazka k = (Ksiazka)obj;
-            if (Isbn != null && k.Isbn != null) {
-                if (Isbn == k.Isbn)
-                    return true;
-                else
-                    return false;
-            }
+            if (
+                    (Isbn != null || k.Isbn != null) && //jeżeli któryś Isbn nie jest nullem
+                    (Isbn == null || k.Isbn == null ||  //to sprawdzamy czy jeden z nich jest nullem
+                    ! Isbn.Equals(k.Isbn))              //lub nie są równe
+                )
+                return false;
             if (!string.Equals(Tytul, k.Tytul)) return false;
             if (!Autor.Equals(Autor, k.Autor)) return false;
             if (RokWydania != k.RokWydania) return false;
