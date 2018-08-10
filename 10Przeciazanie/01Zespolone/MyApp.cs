@@ -16,6 +16,6 @@ namespace _01Zespolone {
             Zespolona z3 = x + 30;
             Console.WriteLine($"{z3}");
             Console.WriteLine($"{(double)z3}");
-        }
+            }
     }
 }

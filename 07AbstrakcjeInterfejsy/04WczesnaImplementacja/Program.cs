@@ -24,6 +24,8 @@ namespace _04WczesnaImplementacja {
             ((Interface1)b).f();
             A a = new A();
             Interface1 ii = a as Interface1;
+            if(ii != null)
+                Console.WriteLine("Interface1 tu byłem");
             ii?.f();
         }
     }
