@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace _01Punkt {
     class Punkt {
-        public double x = 0, y = 0;
+        public double X = 0, Y = 0;
 
         public void Wypisz() {
-            Console.WriteLine($"({x}, {y})");
+            Console.WriteLine($"({X}, {Y})");
         }
     }
     class Program {
@@ -17,10 +17,10 @@ namespace _01Punkt {
             Punkt p1 = new Punkt();
             Punkt p2 = new Punkt();
 
-            p1.x = 3;
-            p1.y = 4;
-            p2.x = 10;
-            p2.y = 20;
+            p1.X = 3;
+            p1.Y = 4;
+            p2.X = 10;
+            p2.Y = 20;
 
             p1.Wypisz();
             p2.Wypisz();

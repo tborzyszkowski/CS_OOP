@@ -19,8 +19,8 @@ namespace _02Osoba {
             m.UstawRokUrodzenia(1985);
             k.UstawRokUrodzenia(1989);
 
-            Console.WriteLine("k - {0}", k.PobierzInformacje());
-            Console.WriteLine("m - {0}", m.PobierzInformacje());
+            Console.WriteLine($"k - {k.PobierzInformacje()}");
+            Console.WriteLine($"m - {m.PobierzInformacje()}");
             //k.CzyKobieta();     //błąd kompilacji
 
             #region Zadanie 2
@@ -28,8 +28,8 @@ namespace _02Osoba {
             k.Zapisz();
             m.Zapisz();
             k.Zapisz();
-            Console.WriteLine("m: Ilość zapisów do pliku: {0}", m.PobierzLiczbeZapisow());
-            Console.WriteLine("k: Ilość zapisów do pliku: {0}", k.PobierzLiczbeZapisow());
+            Console.WriteLine($"m: Ilość zapisów do pliku: {m.PobierzLiczbeZapisow()}");
+            Console.WriteLine($"k: Ilość zapisów do pliku: {k.PobierzLiczbeZapisow()}");
 
             #endregion
         }

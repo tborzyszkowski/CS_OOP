@@ -9,12 +9,12 @@ namespace _02Osoba {
     partial class Osoba {
         partial void zapisz(int licznik) {
             StreamWriter sw = null;
-            string nazwa = string.Format("{0}{1}{2}.txt", Imie, Nazwisko, iloscZapisow);
+            string nazwa = string.Format($"{Imie}{Nazwisko}{iloscZapisow}.txt");
             try {
                 sw = new StreamWriter(nazwa);
-                sw.WriteLine("Numer zapisu: {0}", iloscZapisow);
-                sw.WriteLine("Imie: {0}\nNazwisko: {1}", Imie, Nazwisko);
-                sw.WriteLine("Rok urodzenia: {0}", rokUrodzenia);
+                sw.WriteLine($"Numer zapisu: {iloscZapisow}");
+                sw.WriteLine($"Imie: {Imie}\nNazwisko: {Nazwisko}");
+                sw.WriteLine($"Rok urodzenia: {rokUrodzenia}");
             }
             finally {
                 if (sw != null)
