@@ -24,8 +24,8 @@ namespace _01Instrumenty {
 
             instr.Graj1();		//zawsze Cisza
             instr.Graj2();		// nie wiadomo, "użytkownik wybiera"
-            Console.WriteLine("{0}", instr.GetType());
-            Console.WriteLine("{0}", ((Instrument)instr).GetType());
+            Console.WriteLine($"{instr.GetType()}");
+            Console.WriteLine($"{((Instrument)instr).GetType()}");
             //((Traba)instr).Dmuchaj();
             (instr as Traba)?.Dmuchaj();
             Traba tr = new Traba();
