@@ -10,13 +10,13 @@ namespace _01Instrumenty {
             this.waga = 2;
         }
         public new void Graj1() {
-            Console.WriteLine("Graj1: Tra ta ta, tra ta ta");
+            Console.WriteLine("Traba.Graj1: Tra ta ta, tra ta ta");
         }
         public override void Graj2() {
-            Console.WriteLine("Graj2: Tra ta ta, tra ta ta");
+            Console.WriteLine("Traba.Graj2: Tra ta ta, tra ta ta");
         }
         public void Dmuchaj() {
-            Console.WriteLine("Dmuchaj: fju, fju");
+            Console.WriteLine("Traba.Dmuchaj: fju, fju");
         }
     }
 }

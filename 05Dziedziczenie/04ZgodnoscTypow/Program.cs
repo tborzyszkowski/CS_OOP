@@ -17,8 +17,9 @@ namespace _04ZgodnoscTypow {
             this.x = a;
             base.x = b;
         }
-        public string zawartosc() {
-            return string.Format("B: x = {0}, base.x = {1}", x, base.x);
+        
+        public override string ToString() {
+            return $"B: x = {x}, base.x = {base.x}";
         }
     }
     class Program {
@@ -29,21 +30,22 @@ namespace _04ZgodnoscTypow {
             pa.setA(5);
             pb.setB(15, 16);
 
-            Console.WriteLine("A: pa.x = {0}", pa.x);
-            Console.WriteLine(pb.zawartosc());
+            Console.WriteLine($"A: pa.x = {pa.x}");
+            Console.WriteLine(pb);
             Console.WriteLine(pa.GetType());
             Console.WriteLine(pb.GetType());
             Console.WriteLine();
             pa = pb;
             //pb = pa;
 
-            Console.WriteLine("A: pa.x = {0}", pa.x);
-            Console.WriteLine(pb.zawartosc());
+            Console.WriteLine($"A: pa.x = {pa.x}");
+            Console.WriteLine(pb);
             Console.WriteLine(pa.GetType());
             Console.WriteLine(pb.GetType());
 
-            B pb2 = (B)pa;
-            Console.WriteLine(pb2.zawartosc());
+            //B pb2 = (B)pa;
+            B pb2 = pa as B;
+            Console.WriteLine(pb2);
             Console.WriteLine(pb2.GetType());
 
             A pa2 = (A)(new B());

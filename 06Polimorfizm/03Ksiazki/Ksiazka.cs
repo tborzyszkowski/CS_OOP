@@ -31,6 +31,7 @@ namespace _03Ksiazki {
 
         public override bool Equals(object obj) {
             if (obj == null) return false;
+            if (this == obj) return true;
             if (this.GetType() != obj.GetType()) return false;
             Ksiazka k = (Ksiazka)obj;
             if (

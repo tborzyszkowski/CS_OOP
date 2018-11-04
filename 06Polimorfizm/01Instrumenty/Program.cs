@@ -12,7 +12,7 @@ namespace _01Instrumenty {
             Console.WriteLine("B - bęben");
             char c = Console.ReadKey().KeyChar;
             instr.Graj2();
-            //((Traba)instr).Dmuchaj();
+           // ((Traba)instr).Dmuchaj();
             switch (c) {
                 case 'a':
                     instr = new Traba();
