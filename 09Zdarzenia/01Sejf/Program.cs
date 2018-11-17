@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApplication1 {
     public class AlarmEventArgs : EventArgs {
-        private DateTime kiedy = DateTime.Now;
-        public DateTime Kiedy {
-            get { return kiedy; }
-        }
+        public DateTime Kiedy { get; } = DateTime.Now;
     }
 
     public delegate void AlarmEventHandler(object sender, AlarmEventArgs args);
@@ -28,8 +21,7 @@ namespace ConsoleApplication1 {
         public void OtworzSejf(int pin) {
             if(this.pin != pin) {
                 Console.WriteLine("Zły pin. Włączamy alarm.");
-                if(Alarm != null)
-                    Alarm(this, new AlarmEventArgs());
+                Alarm?.Invoke(this, new AlarmEventArgs());
                 return;
             }
             Console.WriteLine("Uzyskałeś dostęp do sejfu");
