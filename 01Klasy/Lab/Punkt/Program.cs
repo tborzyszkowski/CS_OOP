@@ -10,13 +10,8 @@ namespace Punkt
     {
         static void Main(string[] args)
         {
-            Punkt p1 = new Punkt();
-            Punkt p2 = new Punkt();
-
-            p1.x = 3;
-            p1.y = 4;
-            p2.x = 10;
-            p2.y = 20;
+            Punkt p1 = new Punkt(1, 1);
+            Punkt p2 = new Punkt(2, 2);
 
             Console.WriteLine(p1);
             Console.WriteLine(p2);

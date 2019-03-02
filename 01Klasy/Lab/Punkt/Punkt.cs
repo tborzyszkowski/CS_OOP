@@ -8,16 +8,20 @@ namespace Punkt
 {
     class Punkt
     {
-        public double x = 0, y = 0;
-        
-        public override String ToString() => $"({x}, {y})";
+        public double X = 0, Y = 0;
 
-        public double Odleglosc() => Math.Sqrt(x * x + y * y);
+        public Punkt(double x, double y) {
+            this.X = x;
+            this.Y = y;
+        }
+        public override String ToString() => $"({X}, {Y})";
+
+        public double Odleglosc() => Math.Sqrt(X * X + Y * Y);
 
         public double OdlegloscDwa(Punkt p) => 
             Math.Sqrt(
-                (p.x - this.x) * (p.x - this.x) + 
-                (p.y - this.y) * (p.y - this.y)
+                (p.X - this.X) * (p.X - this.X) + 
+                (p.Y - this.Y) * (p.Y - this.Y)
             );
     }
 }
