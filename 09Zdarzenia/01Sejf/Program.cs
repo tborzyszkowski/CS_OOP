@@ -8,14 +8,11 @@ namespace ConsoleApplication1 {
     public delegate void AlarmEventHandler(object sender, AlarmEventArgs args);
 
     class Sejf {
-        private string czyj;
-        public string Czyj {
-            get { return czyj; }
-        }
+        public string Czyj { get; }
         private int pin;
         public event AlarmEventHandler Alarm;
         public Sejf(string czyj, int pin) {
-            this.czyj = czyj;
+            this.Czyj = czyj;
             this.pin = pin;
         }
         public void OtworzSejf(int pin) {

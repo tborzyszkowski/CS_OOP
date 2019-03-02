@@ -18,11 +18,15 @@ namespace ProgramGlowny
         private static char Menu()
         {
             Console.Clear();
+            //double qqq = 5;
+            //double a = 1 / (qqq - 5);
+            //Console.WriteLine($"a = {a + 1} {Double.IsNaN(a)} {Double.IsInfinity(a)}");
+
             Console.WriteLine("\t\t\tA - Załaduj wtyczki");
             char c = 'B';
             foreach(IMojPlugin wtyczka in zaladowaneWtyczki)
             {
-                Console.WriteLine("\t\t\t{0} - {1}", c,wtyczka.Menu);
+                Console.WriteLine("\t\t\t{0} - {1}", c, wtyczka.Menu);
                 c++;
             }
             Console.WriteLine("\t\t\t{0} - Wyjście z programu", c);
@@ -47,8 +51,7 @@ namespace ProgramGlowny
             if (atrybuty != null)
             {
                 MojAtrybutAttribute moj = (MojAtrybutAttribute)atrybuty[0];
-                Console.WriteLine("Czy załadować wtyczkę napisaną przez {0} i której celem jest:\n{1}",
-                    moj.Autor, moj.Opis);
+                Console.WriteLine($"Czy załadować wtyczkę napisaną przez {moj.Autor} i której celem jest:\n{moj.Opis}");
             }
             else
             {

@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PluginInterfejs", "PluginInterfejs\PluginInterfejs.csproj", "{DE90280E-8483-47DB-96E3-ED220483718E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wtyczki1", "Wtyczki1\Wtyczki1.csproj", "{7BA1CCE3-55B8-4ACE-992E-0943F924F7A5}"
@@ -10,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramGlowny", "ProgramGlowny\ProgramGlowny.csproj", "{58BA827B-155E-472D-A8E7-CAD910AB34F2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wtyczki3", "Wtyczki3\Wtyczki3.csproj", "{151D00BD-4A6C-4FCD-BF75-C0E3C688478A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wtyczki4", "Wtyczki4\Wtyczki4.csproj", "{950A9FC4-5178-4DB9-A39C-30F8AB531672}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,8 +41,15 @@ Global
 		{151D00BD-4A6C-4FCD-BF75-C0E3C688478A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{151D00BD-4A6C-4FCD-BF75-C0E3C688478A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{151D00BD-4A6C-4FCD-BF75-C0E3C688478A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{950A9FC4-5178-4DB9-A39C-30F8AB531672}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{950A9FC4-5178-4DB9-A39C-30F8AB531672}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{950A9FC4-5178-4DB9-A39C-30F8AB531672}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{950A9FC4-5178-4DB9-A39C-30F8AB531672}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4BC7BA67-34E0-449D-9C88-C9898D545ECC}
 	EndGlobalSection
 EndGlobal

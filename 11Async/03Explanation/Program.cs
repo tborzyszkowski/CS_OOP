@@ -55,7 +55,7 @@ namespace _03Explanation {
             expl.getPageSize();
             int count = 0;
             while (expl.result < 0) {
-                //Console.Write(".");
+                Console.Write(".");
                 Thread.Sleep(1);
                 count++;
             }

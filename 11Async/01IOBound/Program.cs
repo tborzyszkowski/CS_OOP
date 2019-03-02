@@ -48,7 +48,7 @@ namespace _01IOBound {
                 count++;
             }
             
-            Console.WriteLine(ad.result);
+            //Console.WriteLine(ad.result);
             Console.WriteLine(count);
         }
     }
