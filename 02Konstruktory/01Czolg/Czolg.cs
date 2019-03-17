@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace _01Czolg {
-    class Czolg {
+    [Serializable()]
+    class Czolg : ICloneable {
         private int numerCzolgu;
         private string nazwa;
         private Dzialo dzialo;
@@ -19,7 +20,7 @@ namespace _01Czolg {
         }
 
         public Czolg(int nrCzolgu, string nazwa, Dzialo dzialo, Punkt punkt)
-            : this(nrCzolgu, nazwa, dzialo.PobierzKaliber(), punkt.PobierzX(), punkt.PobierzY()) {
+            : this(nrCzolgu, nazwa, dzialo.GetKaliber(), punkt.GetX(), punkt.GetY()) {
         }
 
         public Czolg(int nrCzolgu, string nazwa, double kaliber)
@@ -37,24 +38,32 @@ namespace _01Czolg {
         }
 
         public string PobierzInformacje() {
-            return string.Format("Czołg\n nr:   {0}\n o nazwie: {1}\n kaliber działa: {2}\n znajduje się w punkcie: ({3}; {4})\n",
-                numerCzolgu, nazwa, dzialo.PobierzKaliber(), pozycja.PobierzX(), pozycja.PobierzY());
+            return $"Czołg\n nr:\t{numerCzolgu}\n o nazwie: {nazwa}\t hash: {this.GetHashCode()}" +
+                $"\n kaliber działa: {dzialo.GetKaliber()}\t hash: {this.dzialo.GetHashCode()}"+
+                $"\n znajduje się w punkcie: ({pozycja.GetX()}; {pozycja.GetY()})\n";
         }
 
         #region Zadanie 2
-        public void ZmienKaliber(double nowyKaliber) {
-            dzialo.ZmienKaliber(nowyKaliber);
+        public void SetKaliber(double nowyKaliber) {
+            dzialo.SetKaliber(nowyKaliber);
         }
-        public void ZmienPozycje(int x, int y) {
-            pozycja.ZmienX(x);
-            pozycja.ZmienY(y);
+        public void SetPozycja(int x, int y) {
+            pozycja.SetX(x);
+            pozycja.SetY(y);
         }
-        public void ZmienNazwe(string nowaNazwa) {
+        public void SetNazwa(string nowaNazwa) {
             nazwa = nowaNazwa;
         }
+
         public Czolg Klonuj() {
             return (Czolg)this.MemberwiseClone();
         }
+
+        public object Clone() {
+            //return this.MemberwiseClone();
+            return new Czolg(this);
+        }
+
         public Czolg(Czolg prototyp) {
             numerCzolgu = prototyp.numerCzolgu;
             nazwa = prototyp.nazwa;

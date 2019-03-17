@@ -11,11 +11,11 @@ namespace _01Czolg {
             this.kaliber = kaliber;
         }
 
-        public double PobierzKaliber() {
+        public double GetKaliber() {
             return kaliber;
         }
         #region Zadanie 2
-        public void ZmienKaliber(double nowyKaliber) {
+        public void SetKaliber(double nowyKaliber) {
             kaliber = nowyKaliber;
         }
 

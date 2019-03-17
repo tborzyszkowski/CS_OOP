@@ -25,9 +25,9 @@ namespace _01Czolg {
             Console.WriteLine("Oryginał: {0}", oryginal1.PobierzInformacje());
             Console.WriteLine("Klon:     {0}", klon1.PobierzInformacje());
             Console.WriteLine("Zmieniamy klona: ");
-            klon1.ZmienKaliber(300);
-            klon1.ZmienNazwe("Klon 1: ");
-            klon1.ZmienPozycje(55, 55);
+            klon1.SetKaliber(300);
+            klon1.SetNazwa("Klon 1: ");
+            klon1.SetPozycja(55, 55);
             Console.WriteLine("Oryginał: {0}", oryginal1.PobierzInformacje());
             Console.WriteLine("Klon:     {0}", klon1.PobierzInformacje());
 
@@ -37,9 +37,9 @@ namespace _01Czolg {
             Console.WriteLine("Oryginał: {0}", oryginal2.PobierzInformacje());
             Console.WriteLine("Klon:     {0}", klon2.PobierzInformacje());
             Console.WriteLine("Zmieniamy klona: ");
-            klon2.ZmienKaliber(300);
-            klon2.ZmienNazwe("Klon 2");
-            klon2.ZmienPozycje(55, 55);
+            klon2.SetKaliber(300);
+            klon2.SetNazwa("Klon 2");
+            klon2.SetPozycja(55, 55);
             Console.WriteLine("Oryginał: {0}", oryginal2.PobierzInformacje());
             Console.WriteLine("Klon:     {0}", klon2.PobierzInformacje());
 

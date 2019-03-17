@@ -14,17 +14,17 @@ namespace _01Czolg {
             this.y = y;
         }
 
-        public int PobierzX() {
+        public int GetX() {
             return x;
         }
-        public int PobierzY() {
+        public int GetY() {
             return y;
         }
         #region Zadanie 2
-        public void ZmienX(int noweX) {
+        public void SetX(int noweX) {
             x = noweX;
         }
-        public void ZmienY(int noweY) {
+        public void SetY(int noweY) {
             y = noweY;
         }
         #endregion
