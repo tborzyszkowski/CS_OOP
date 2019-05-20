@@ -1,0 +1,191 @@
+﻿@model IEnumerable<BiuroRachunkowe.Models.SAD>
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<div class="row" style="padding-left:0px">
+
+
+	<div style="float:left;margin-left:20px;width:250px">
+		<h2>SAD Importowy</h2>
+	</div>
+	<div style="float:left; margin-left:28%" id="menuButtons">
+
+		@Html.Partial("~/Views/Transport/_ImportSADMenu.cshtml")
+
+
+	</div>
+
+	<div style="clear:both"></div>
+	<div id="main1" style="padding-left:20px;">
+
+		<div style="float:left;margin-top:63px;width:413px">
+			@using (Html.BeginForm("SADInvoice", "Transport", FormMethod.Get))
+			{
+				<div>
+					@Html.Raw(TempData["msg"])
+
+					<text><b>Wyszukaj:</b></text>
+					@if (Session["SearchSAD"] != null)
+					{
+						@Html.TextBox("SearchString", Session["SearchSADIS"].ToString(), new { @class = "form-control", @style = "width:150px;display:inline-block", onchange = "this.form.submit();" })
+					}
+					else
+					{
+						@Html.TextBox("SearchString", null, new { @class = "form-control", @style = "width:150px;display:inline-block", onchange = "this.form.submit();" })
+					}
+
+				</div>
+
+			}
+
+			<table class="table" id="table" style="margin-top:15px;">
+				<tr>
+					<td width="50">
+						@Html.ActionLink("ID", "SADInvoice", new { sort = ViewBag.idd, id = ViewBag.id })
+					</td>
+					<td width="200">
+						@Html.ActionLink("Number", "SADInvoice", new { sort = ViewBag.nr, id = ViewBag.id })
+					</td>
+					<td width="100">
+						@Html.ActionLink("SAD Date", "SADInvoice", new { sort = ViewBag.date, id = ViewBag.id })
+					</td>
+
+
+				</tr>
+
+
+
+				@foreach (var item in Model)
+				{
+					string selected = "";
+					if (item.Id == Convert.ToInt32(Session["SelectedIdIS"]))
+					{
+						selected = "selected";
+					}
+					<tr class="@selected" onclick="location.href='@(Url.Action("Positionslist", "Transport", new { id = item.Id }))'" onmouseover="ChangeBackgroundColor(this)" onmouseout="RestoreBackgroundColor(this)" style="cursor:pointer">
+
+
+						<td>
+							@Html.DisplayFor(modelItem => item.Id)
+						</td>
+						<td>
+							@Html.SADNumberToFormat(item.SadNumber)
+						</td>
+						<td>
+							@{
+								string x = item.SadDate.ToString("yyyy-MM-dd");
+							}
+							@x
+						</td>
+
+					</tr>
+
+
+
+
+				}
+			</table>
+		</div>
+
+
+		<div style="float:left;padding-left:5%;margin-top:48px;width:600px">
+			<h2>Pozycje:</h2>
+			<div id="positionsDiv" style="height:250px;overflow-x:hidden;padding-bottom:10px;float:left">
+				<table class="table" id="positions" border="0" style="width:100%">
+					@if (ViewBag.Details != null)
+					{
+
+
+						<tr style="width:50px">
+							<td>ID</td>
+							<td>Kod HS</td>
+							<td>Kraj</td>
+							<td>Stawka</td>
+							<td>Wartość</td>
+							<td>Cło</td>
+							<td>
+								@if (ViewBag.Details != null && Session["SelectedPosIS"] != null && !User.IsInRole("Intern"))
+								{
+
+
+									@Html.ActionLink("Edytuj", "PositionsEdit", new { id = Convert.ToInt32(Session["SelectedPosIS"]) }, new { @class = "btn btn-default" })
+
+
+
+
+								}
+								else
+								{
+									@Html.ActionLink("Edytuj", "PositionsEdit", new { id = Convert.ToInt32(Session["SelectedPosIS"]) }, new { @class = "btn btn-default",@disabled="disabled" ,onclick="return false"})
+								}
+							</td>
+						</tr>
+
+						foreach (var item in (ViewBag.Details as List<BiuroRachunkowe.Models.SadPositions>))
+						{
+							string selected2 = "";
+							if (item.Id == Convert.ToInt32(Session["SelectedPosIS"]))
+							{
+								selected2 = "selected";
+							}
+
+							<tr class="@selected2" onclick="location.href='@(Url.Action("Positionslist", "Transport", new { idpos = item.Id }))'" onmouseover="ChangeBackgroundColor(this)" onmouseout="RestoreBackgroundColor(this)" style="cursor:pointer">
+								<td>@item.Id</td>
+								<td>@item.HSCode</td>
+								<td>@item.CountryOfOrigin</td>
+								<td>@item.Rate.ToString("F")</td>
+								<td>@item.PositionValue</td>
+								<td>@item.DutyValue</td>
+								<td></td>
+							</tr>
+
+						}
+					}
+				</table>
+
+			</div>
+		
+
+		</div>
+		<div style="clear:both"></div>
+
+
+	</div>
+</div>
+
+<script>
+	$(document).ready(function () {
+		var Cnt = 0;
+		$('#positions tbody tr').each(function () {
+			Cnt++;
+			if ($(this).hasClass("selected")) {
+				return;
+			}
+			else {
+				if (Cnt % 2) $(this).addClass('even').removeClass('odd');
+				else $(this).addClass('odd').removeClass('even');
+			}
+		});
+		var btn = document.getElementById("Position");
+		btn.style.backgroundColor = "#e6e6e6";
+
+	});
+
+
+	function ChangeBackgroundColor(row) {
+		row.style.backgroundColor = "#a4d4e6";
+	}
+
+	function RestoreBackgroundColor(row) {
+		if ($(row).hasClass('selected')) {
+			row.style.backgroundColor = "#a4d4e6";
+		}
+		else {
+			if ($(row).hasClass("even")) {
+				row.style.backgroundColor = "#f9f9f9";
+			}
+			else {
+				row.style.backgroundColor = "#ffffff";
+			}
+		}
+	}
+</script>

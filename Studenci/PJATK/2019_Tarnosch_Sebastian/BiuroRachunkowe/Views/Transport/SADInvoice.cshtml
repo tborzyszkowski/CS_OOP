@@ -1,0 +1,322 @@
+﻿@model IEnumerable<BiuroRachunkowe.Models.SAD>
+@{
+	ViewBag.Title = "SADInvoice";
+}
+
+
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<div class="row" style="padding-left:0px">
+
+
+	<div style="float:left;margin-left:20px;width:250px">
+		<h2>SAD Importowy</h2>
+	</div>
+	<div style="float:left; margin-left:28%" id="menuButtons">
+
+		@Html.Partial("~/Views/Transport/_ImportSADMenu.cshtml")
+
+
+	</div>
+
+	<div style="clear:both"></div>
+	<div id="main1" style="padding-left:20px;">
+		
+		<div style="float:left;margin-top:63px;width:413px">
+			@using (Html.BeginForm("SADInvoice", "Transport", FormMethod.Get))
+			{
+				<div>
+					@Html.Raw(TempData["msg"])
+
+					<text><b>Wyszukaj:</b></text>
+					@if (Session["SearchSAD"] != null)
+					{
+						@Html.TextBox("SearchString", Session["SearchSADIS"].ToString(), new { @class = "form-control", @style = "width:150px;display:inline-block", onchange = "this.form.submit();" })
+					}
+					else
+					{
+						@Html.TextBox("SearchString", null, new { @class = "form-control", @style = "width:150px;display:inline-block", onchange = "this.form.submit();" })
+					}
+
+				</div>
+
+			}
+
+			<table class="table" id="table" style="margin-top:15px;">
+				<tr>
+					<td width="50">
+						@Html.ActionLink("ID", "SADInvoice", new { sort = ViewBag.idd, id = ViewBag.id })
+					</td>
+					<td width="200">
+						@Html.ActionLink("Number", "SADInvoice", new { sort = ViewBag.nr, id = ViewBag.id })
+					</td>
+					<td width="100">
+						@Html.ActionLink("SAD Date", "SADInvoice", new { sort = ViewBag.date, id = ViewBag.id })
+					</td>
+
+
+				</tr>
+
+
+
+				@foreach (var item in Model)
+				{
+					string selected = "";
+					if (item.Id == Convert.ToInt32(Session["SelectedIdIS"]))
+					{
+						selected = "selected";
+					}
+					<tr class="@selected" onclick="location.href='@(Url.Action("SADInvoice", "Transport", new { id = item.Id }))'" onmouseover="ChangeBackgroundColor(this)" onmouseout="RestoreBackgroundColor(this)" style="cursor:pointer">
+
+
+						<td>
+							@Html.DisplayFor(modelItem => item.Id)
+						</td>
+						<td>
+							@Html.SADNumberToFormat(item.SadNumber)
+						</td>
+						<td>
+							@{
+								string x = item.SadDate.ToString("yyyy-MM-dd");
+							}
+							@x
+						</td>
+
+					</tr>
+
+
+
+
+				}
+			</table>
+		</div>
+
+
+
+		<div style="float:left;padding-bottom:15px;padding-left:5%;width:600px">
+			@if (ViewBag.Message != null)
+			{
+				<div class="text-danger">
+					@ViewBag.Message
+				</div>
+			}
+
+			<h2>Faktury nie przydzielone:</h2>
+			<div class="form-group" style="max-width:400px;">
+				<div class="input-group">
+					<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+					<input type="text" id="Search" placeholder="Wyszukaj" class="form-control" />
+				</div>
+
+			</div>
+
+			@using (Html.BeginForm("AddInvoice", "Transport", FormMethod.Post))
+			{
+
+				<div id="divTable2" style="height:200px;overflow:auto">
+
+
+					<table class="table rule_event_table" id="table2">
+						@if (ViewBag.InvoiceToAdd != null)
+						{
+
+
+
+
+							<tr><td>ID</td><td>Numer</td><td>Waluta</td><td>Data</td><td>Wartość</td><td>Typ</td><td>Dostawca</td></tr>
+							<tbody>
+								@foreach (var item in (ViewBag.InvoiceToAdd as List<BiuroRachunkowe.Models.InvoiceHeader>))
+								{
+
+
+									<tr class="Search" style="cursor:pointer" onmouseover="ChangeBackgroundColor(this)" onmouseout="RestoreBackgroundColor(this)">
+										<td>@item.Id</td>
+										<td>@item.InvoiceNumber</td>
+										<td>@item.Currency</td>
+
+										<td>@Html.DateToFormat(item.InvoiceDate)</td>
+										<td>@item.InvoiceValue</td>
+										<td>@item.Supplier</td>
+										<td>
+
+											<input type="checkbox" name="ids" value="@item.Id" onchange="highlight(this)" />
+
+										</td>
+									</tr>
+
+
+
+								}
+							</tbody>
+
+
+
+						}
+
+					</table>
+				</div>
+
+				if (ViewBag.InvoiceToAdd != null)
+				{
+
+					if (User.IsInRole("Intern"))
+					{
+						<input type="submit" value="Dodaj Fakturę" class="btn btn-default" disabled onclick="return false;"/>
+					}
+					else
+					{
+						<input type="submit" value="Dodaj Fakturę" class="btn btn-default" />
+					}
+
+				}
+
+			}
+			@using (Html.BeginForm("DeleteInvoice", "Transport", FormMethod.Post))
+			{
+				<h2>Faktury przydzielone:</h2>
+				<div id="divTable3" style="height:200px;overflow:auto">
+					@{decimal all = 0;
+					}
+					<table class="table rule_event_table " id="table3">
+
+						@if (ViewBag.InvoiceToDelete != null)
+						{
+							<tr><td>ID</td><td>Numer</td><td>Waluta</td><td>Data</td><td>Wartość</td><td>Typ</td><td>Dostawca</td></tr>
+
+							<tbody>
+								@foreach (var item in (ViewBag.InvoiceToDelete as List<BiuroRachunkowe.Models.InvoiceHeader>))
+								{
+
+
+									<tr style="cursor:pointer" onmouseover="ChangeBackgroundColor(this)" onmouseout="RestoreBackgroundColor(this)">
+										<td>@item.Id</td>
+										<td>@item.InvoiceNumber</td>
+										<td>@item.Currency</td>
+
+										<td>@Html.DateToFormat(item.InvoiceDate)</td>
+										<td>@item.InvoiceValue</td>
+										<td>@item.Supplier</td>
+										<td>
+
+											<input type="checkbox" name="ids" value="@item.Id" onchange="highlight(this)" />
+
+										</td>
+
+										@{all = (all + item.InvoiceValue);}
+									</tr>
+
+								}
+
+							</tbody>
+						}
+
+
+
+
+
+					</table>
+
+					<div style="clear:both"></div>
+
+
+				</div>
+				<div>
+					<div style="float:right;text-align:right">
+						Wartość Faktur:
+						@Html.TextBox("all", @all, new { @disabled = "disabled" })
+					</div>
+
+					<div style="float:left">
+						@if (User.IsInRole("Intern"))
+						{
+							<input type="submit" value="Usuń Fakturę" style="float:left" class="btn btn-default" disabled onclick="return false"/>
+						}
+						else
+						{
+							<input type="submit" value="Usuń Fakturę" style="float:left" class="btn btn-default" />
+						}
+					</div>
+
+
+
+				</div>
+			}
+		</div>
+		<div style="clear:both"></div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function () {
+		function Contains(text_one, text_two) {
+			text_one = text_one.replace(/\s/g, '');
+			text_two = text_two.replace(/\s/g, '');
+			if (text_one.indexOf(text_two) != -1)
+				return true;
+		}
+		$("#Search").keyup(function () {
+			var searchText = $("#Search").val().toLowerCase();
+			$(".Search").each(function () {
+				if (!Contains($(this).text().toLowerCase().trim(), searchText.toLowerCase().trim())) {
+					$(this).hide();
+				}
+				else {
+					$(this).show();
+				}
+			});
+		});
+	});
+
+
+	
+
+
+	function ChangeBackgroundColor(row) {
+		row.style.backgroundColor = "#a4d4e6";
+	}
+
+	function RestoreBackgroundColor(row) {
+		if ($(row).hasClass('selected')) {
+			row.style.backgroundColor = "#a4d4e6";
+		}
+		else {
+			row.style.backgroundColor = "#ffffff";
+		}
+	}
+
+	$('.rule_event_table tbody tr').click(function (event) {
+		var $target = $(event.target);
+		var row = this;
+		if (!$target.is('input:checkbox')) {
+			$(this).find('input:checkbox').each(function () {
+				if (this.checked) {
+					this.checked = false;
+					$(row).removeClass("selected");
+					$(row).css("background-color", "#ffffff");
+				}
+				else {
+					this.checked = true;
+					$(row).addClass("selected");
+					$(row).css("background-color", "#a4d4e6");
+				}
+			});
+		}
+	});
+
+
+
+	function highlight(obj) {
+		if (obj.checked) {
+			$(obj).parent().parent().css("background", "#a4d4e6");
+			$(obj).parent().parent().addClass("selected");
+		}
+		else {
+			$(obj).parent().parent().css("background", "#ffffff");
+			$(obj).parent().parent().removeClass("selected");
+		}
+	}
+
+	$(document).ready(function () {
+		var btn = document.getElementById("Invoice");
+		btn.style.backgroundColor = "#e6e6e6";
+	});
+</script>
