@@ -13,10 +13,10 @@ namespace _01Czolg {
         private Punkt pozycja;
 
         public Czolg(int nrCzolgu, string nazwa, double kaliber, int pozycjaX, int pozycjaY) {
-            numerCzolgu = nrCzolgu;
+            this.numerCzolgu = nrCzolgu;
             this.nazwa = nazwa;
-            dzialo = new Dzialo(kaliber);
-            pozycja = new Punkt(pozycjaX, pozycjaY);
+			this.dzialo = new Dzialo(kaliber);
+			this.pozycja = new Punkt(pozycjaX, pozycjaY);
         }
 
         public Czolg(int nrCzolgu, string nazwa, Dzialo dzialo, Punkt punkt)
@@ -56,7 +56,7 @@ namespace _01Czolg {
         }
 
         public Czolg Klonuj() {
-            return (Czolg)this.MemberwiseClone();
+            return this.MemberwiseClone() as Czolg;
         }
 
         public object Clone() {

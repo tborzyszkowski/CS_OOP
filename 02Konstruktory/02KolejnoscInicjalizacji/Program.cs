@@ -31,18 +31,18 @@ namespace _02KolejnoscInicjalizacji {
     }
     class Program {
         static void Main(string[] args) {
-            Pierwsza p1 = new Pierwsza() { x = 5 };
-            Druga d1 = new Druga() { p = new Pierwsza(), y = 33 };
+            Pierwsza p1 = new Pierwsza { x = 5 };
+            Druga d1 = new Druga() { p = new Pierwsza() { x = 6 } , y = 33 };
 
-            Console.WriteLine("p1.x = {0}", p1.x);
-            Console.WriteLine("d1.y = {0}, d1.p.x = {1}", d1.y, d1.p.x);
+            Console.WriteLine($"p1.x = {p1.x}");
+            Console.WriteLine($"d1.y = {d1.y}, d1.p.x = {d1.p.x}");
             Console.WriteLine();
 
             Pierwsza p2 = new Pierwsza(45) { x = -1 };
             Druga d2 = new Druga(55) { p = new Pierwsza(13), y = 44 };
 
-            Console.WriteLine("p2.x = {0}", p2.x);
-            Console.WriteLine("d2.y = {0}, d2.p.x = {1}", d2.y, d2.p.x);
+            Console.WriteLine($"p2.x = {p2.x}");
+            Console.WriteLine($"d2.y = {d2.y}, d2.p.x = {d2.p.x}");
         }
     }
 }
