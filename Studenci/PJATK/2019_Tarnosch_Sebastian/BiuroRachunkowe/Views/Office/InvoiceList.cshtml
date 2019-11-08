@@ -1,0 +1,269 @@
+﻿@model IEnumerable<BiuroRachunkowe.Models.InvoiceHeader>
+
+
+<div style="float:left;width:65%">
+	<h2>Faktury Importowe</h2>
+	<div style="width:100%">
+		@using (Html.BeginForm("InvoiceList", "Office", FormMethod.Get))
+		{
+			@Html.Hidden("btnsubmit", "Szukaj")
+			@Html.Raw(TempData["msg"])
+		<div style="margin-bottom:3px;">
+
+			<div style="float:left">
+				<text><b>Wyszukaj:</b></text>
+				@Html.TextBox("SearchString", null, new { @class = "form-control", @style = "margin-left:10px;width:150px;display:inline-block", onchange = "this.form.submit();", @value = Session["SearchStringInvoice"] != null ? Session["SearchStringInvoice"].ToString() : "", @placeholder = "Naciśnij enter" })
+			</div>
+			
+
+			<div style="float:right">
+				@if (User.IsInRole("Intern"))
+				{
+
+					@Html.ActionLink("Stwórz", "InvoiceCreate", null, new { @class = "btn btn-default", @style = "padding:6px 12px" ,@disabled="disabled",@onclick="return false;"})
+				}
+				else
+				{
+					@Html.ActionLink("Stwórz", "InvoiceCreate", null, new { @class = "btn btn-default", @style = "padding:6px 12px" })
+
+				}
+			</div>
+			<div style="clear:both"></div>
+		</div>
+			
+
+
+
+
+			<div style="padding-bottom:10px;clear:both"></div>
+		}
+	</div>
+
+	<div style="width:100%;height:590px;overflow-y:auto">
+		<table class="table" id="table" style="width:100%">
+			<tr>
+				<td>
+					@Html.ActionLink("ID", "InvoiceList", new { sort = ViewBag.ID, option = Request.QueryString["option"]})
+				</td>
+				<td>
+					@Html.ActionLink("Numer Faktury", "InvoiceList", new { sort = ViewBag.InvoiceNumber, option = Request.QueryString["option"]})
+				</td>
+				<td>
+					@Html.ActionLink("Data Faktury", "InvoiceList", new { sort = ViewBag.Date, option = Request.QueryString["option"]})
+				</td>
+				<td>
+					@Html.ActionLink("Dostawca", "InvoiceList", new { sort = ViewBag.Supp, option = Request.QueryString["option"] })
+				</td>
+				<td>
+					@Html.ActionLink("Pochodzenie", "InvoiceList", new { sort = ViewBag.Ship, option = Request.QueryString["option"] })
+				</td>
+
+				<td>
+					@Html.ActionLink("Rodzaj Transportu", "InvoiceList", new { sort = ViewBag.Type, option = Request.QueryString["option"] })
+				</td>
+
+			</tr>
+
+			@foreach (var item in Model)
+			{
+				string selected = "";
+				if (item.Id == Convert.ToInt32(Session["PositionInvoice"]))
+				{
+					selected = "selected";
+				}
+				<tr class="@selected" onclick="location.href='@(Url.Action("InvoiceList", "Office", new { id = item.Id }))'" onmouseover="ChangeBackgroundColor(this)" onmouseout="RestoreBackgroundColor(this)" style="cursor:pointer">
+					<td>
+						@Html.DisplayFor(modelItem => item.Id)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.InvoiceNumber)
+					</td>
+					<td>
+
+						@{String x = item.InvoiceDate.ToString("yyyy-MM-dd");
+						}
+						@x
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Supplier)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.ShipFrom)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.TypeOfTranosport)
+					</td>
+
+				</tr>
+			}
+
+		</table>
+
+
+	</div>
+	<div style="width:100%">
+		<div style="float:left">
+			@Html.ActionLink("Eksportuj", "ExportAllInvoice", null, new { @class = "btn btn-default" })
+		</div>
+
+		<div style="clear:both"></div>
+	</div>
+</div>
+<div style="width:35%;float:left;padding-left:50px;height:750px;margin-top:30px">
+	@if (ViewBag.Details != null)
+	{
+
+		long idv = Convert.ToInt32(Session["PositionInvoice"]);
+
+
+
+	<div class="row" style="margin-bottom:3px;margin-right:0px;margin-left:0px">
+
+		@if (User.IsInRole("Intern"))
+		{
+			@Html.ActionLink("Edytuj", "InvoiceEdit", new { id = idv }, new { @class = "btn btn-default col-sm-4", @disabled = "disabled",@onclick="return false;" })
+		}
+		else
+		{
+			@Html.ActionLink("Edytuj", "InvoiceEdit", new { id = idv }, new { @class = "btn btn-default col-sm-4" })
+
+		}
+		@Html.ActionLink("Pozycje", "ImportInvoicePos", new { id = idv }, new { @class = "btn btn-default col-sm-4" })
+		@using (@Html.BeginForm("InvoiceDelete", "Office", FormMethod.Post))
+		{
+			@Html.AntiForgeryToken()
+			@Html.Hidden("id", idv)
+
+			if (User.IsInRole("Intern"))
+			{
+
+				<input type="submit" value="Usuń" class="btn btn-default col-sm-4" disabled onclick="return false;" />
+			}
+
+			else
+			{
+				<input type="submit" value="Usuń" class="btn btn-default col-sm-4" onclick="return confirm('Czy na pewno chcesz usunąć tą fakturę')" />
+
+
+			}
+		}
+	</div>
+			
+
+
+		
+		<div class="row" style="margin-right:0px;margin-left:0px">
+			@Html.ActionLink("Szczegóły", "InvoiceDetails", new { id = idv }, new { @class = "btn btn-default col-sm-4" })
+
+			@Html.ActionLink("Eksportuj", "ExportInvoice", new { id = idv }, new { @class = "btn btn-default col-sm-4" })
+			
+			
+
+
+
+			
+
+		</div>
+
+
+
+
+
+
+		var item = ViewBag.Details as BiuroRachunkowe.Models.InvoiceHeader;
+
+		<table  id="table3" class="table" style="margin-top:10px;height:590px;text-align:center">
+			<tr><td colspan="2"><h4>Dane Faktury @item.InvoiceNumber</h4></td></tr>
+			<tr>
+				<td>
+					Dostawca:
+				</td>
+				<td>
+
+						@item.Supplier
+
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					Waluta:
+				</td>
+				<td>
+					@item.Currency
+				</td>
+
+			</tr>
+			<tr>
+				<td>
+					Kurs:
+				</td>
+				<td>
+					@item.ExchangeRate
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Wartość Faktury:
+				</td>
+				<td>
+					@item.InvoiceValue
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Rodzaj Transportu:
+				</td>
+				<td>
+					@item.TypeOfTranosport
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Inne Koszty:
+				</td>
+				<td>
+					@item.AdditionalCost
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					War.Dost.:
+				</td>
+				<td>
+					@item.TransportCost
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					Uwagi:
+				</td>
+				<td>
+					@item.Remarks
+
+
+			</tr>
+		</table>
+
+
+	}
+
+</div>
+<div style="clear:both"></div>
+<script>
+
+	function ChangeBackgroundColor(row) {
+		row.style.backgroundColor = "#a4d4e6";
+	}
+
+	function RestoreBackgroundColor(row) {
+		if ($(row).attr('class') == "selected") {
+			row.style.backgroundColor = "#a4d4e6";
+		}
+		else {
+			row.style.backgroundColor = "#ffffff";
+		}
+	}
+</script>
