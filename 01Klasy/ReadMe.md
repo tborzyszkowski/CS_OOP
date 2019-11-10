@@ -1,14 +1,15 @@
 # Zadanie 1
 
-Dodaj do klasy Punkt z projektu 01Punkt:
-- metodê klasy Punkt wyliczaj¹c¹ odleg³oœæ punktu od pocz¹tku uk³adu wspó³rzêdnych
-- metodê klasy Punkt z parametrem typu punkt wyliczaj¹c¹ odleg³oœæ punktu posiadaj¹cego metodê od punktu, który jest parametrem metody
-- metodê klasy Punkt z dwoma parametrami typu punkt, sprawdzaj¹c¹ czy punkty tworz¹ trójk¹t
+Dodaj do klasy ``Punkt`` z projektu ``01Punkt``:
+- metodê klasy ``Punkt`` wyliczaj¹c¹ odleg³oœæ punktu od pocz¹tku uk³adu wspó³rzêdnych
+- metodê klasy ``Punkt`` z parametrem typu ``Punkt`` wyliczaj¹c¹ odleg³oœæ punktu posiadaj¹cego 
+metodê od punktu, który jest parametrem metody
+- metodê klasy ``Punkt`` z dwoma parametrami typu ``Punkt``, sprawdzaj¹c¹ czy punkty tworz¹ trójk¹t
 
 # Zadanie 2
 
-Twoja firma opracowuje program dla banku. Twoim zadaniem jest stworzenie i przetestowanie klasy Konto. 
-Klasa Konto posiada nastêpuj¹ce pola:
+Twoja firma opracowuje program dla banku. Twoim zadaniem jest stworzenie i przetestowanie klasy ``Konto``. 
+Klasa ``Konto`` posiada nastêpuj¹ce pola:
 - ``wlasciciel``: typu ``Osoba`` (Imie i Nazwisko)
 - ``saldo``: typu ``decimal``
 - ``pin``: typu ``int``
@@ -16,6 +17,6 @@ Klasa Konto posiada nastêpuj¹ce pola:
 ## Wskazówki
 1. Pola ``saldo`` i ``pin`` powinny byæ zainicjalizowane wartoœci¹ zero. 
 2. Pole ``pin`` mo¿na zmieniæ tylko podaj¹c obecn¹ wartoœæ pola. 
-3. Wyp³atê z konta (zmniejszenie wartoœci pola saldo) mo¿na uzyskaæ tylko po podaniu prawid³owego pinu. 
+3. Wyp³atê z konta (zmniejszenie wartoœci pola ``saldo``) mo¿na uzyskaæ tylko po podaniu prawid³owego pinu. 
 4. Na koncie nie wolno zrobiæ debetu. 
 5. Dodaj metodê, która zwraca informacje o koncie, oczywiœcie pod warunkiem, ¿e zosta³ podany prawid³owy pin.
