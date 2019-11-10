@@ -26,13 +26,11 @@ namespace _03DniTygodnia {
 		}
 	}
 
-
 	class Program {
 		static void Main(string[] args)
 		{
 			DayCollection week = new DayCollection();
 			System.Console.WriteLine(week["Fri"]);
-
 			System.Console.WriteLine(week["Made-up Day"]);
 		}
 	}
