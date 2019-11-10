@@ -1,9 +1,12 @@
-namespace Demo06.Code {
-    public class Customer {
-        public string FullName { get; set; }
+namespace Demo06.Code
+{
+	public class Customer
+	{
+		public string FullName { get; set; }
 
-        public Customer(string fullName) {
-            FullName = fullName;
-        }
-    }
+		public Customer(string fullName)
+		{
+			FullName = fullName;
+		}
+	}
 }

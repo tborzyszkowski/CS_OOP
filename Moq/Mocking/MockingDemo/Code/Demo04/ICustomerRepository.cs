@@ -1,5 +1,7 @@
-namespace Demo04.Code {
-    public interface ICustomerRepository {
-        void Save(Customer customer);
-    }
+namespace Demo04.Code
+{
+	public interface ICustomerRepository
+	{
+		void Save(Customer customer);
+	}
 }

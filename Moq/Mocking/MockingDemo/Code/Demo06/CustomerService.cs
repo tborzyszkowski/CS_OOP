@@ -1,23 +1,27 @@
-﻿namespace Demo06.Code {
-    public class CustomerService {
-        private readonly ICustomerRepository _customerRepository;
-        private readonly ICustomerFullNameBuilder _customerFullName;
+﻿namespace Demo06.Code
+{
+	public class CustomerService
+	{
+		private readonly ICustomerRepository _customerRepository;
+		private readonly ICustomerFullNameBuilder _customerFullName;
 
-        public CustomerService(
-            ICustomerRepository customerRepository,
-            ICustomerFullNameBuilder customerFullName) {
-            _customerRepository = customerRepository;
-            _customerFullName = customerFullName;
-        }
+		public CustomerService(
+			ICustomerRepository customerRepository,
+			ICustomerFullNameBuilder customerFullName)
+		{
+			_customerRepository = customerRepository;
+			_customerFullName = customerFullName;
+		}
 
-        public void Create(CustomerToCreateDto customerToCreateDto) {
-            var fullName = _customerFullName.From(
-                customerToCreateDto.FirstName,
-                customerToCreateDto.LastName);
+		public void Create(CustomerToCreateDto customerToCreateDto)
+		{
+			var fullName = _customerFullName.From(
+				customerToCreateDto.FirstName,
+				customerToCreateDto.LastName);
 
-            var customer = new Customer(fullName);
+			var customer = new Customer(fullName);
 
-            _customerRepository.Save(customer);
-        }
-    }
+			_customerRepository.Save(customer);
+		}
+	}
 }
