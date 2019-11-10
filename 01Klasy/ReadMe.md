@@ -1,11 +1,11 @@
-#Zadanie 1
+# Zadanie 1
 
 Dodaj do klasy Punkt z projektu 01Punkt:
 - metodê klasy Punkt wyliczaj¹c¹ odleg³oœæ punktu od pocz¹tku uk³adu wspó³rzêdnych
 - metodê klasy Punkt z parametrem typu punkt wyliczaj¹c¹ odleg³oœæ punktu posiadaj¹cego metodê od punktu, który jest parametrem metody
 - metodê klasy Punkt z dwoma parametrami typu punkt, sprawdzaj¹c¹ czy punkty tworz¹ trójk¹t
 
-#Zadanie 2
+# Zadanie 2
 
 Twoja firma opracowuje program dla banku. Twoim zadaniem jest stworzenie i przetestowanie klasy Konto. 
 Klasa Konto posiada nastêpuj¹ce pola:
