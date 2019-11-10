@@ -23,9 +23,7 @@ namespace _03Ksiazki {
 		public Ksiazka(string imie, string nazwisko, string tytul) :
 			this(imie, nazwisko, tytul, 2000, "ABC", null) { }
 
-		public override string ToString() {
-			return string.Format($"{Autor.Nazwisko} {Autor.Imie[0]}., \"{Tytul}\", {Wydawnictwo}, {RokWydania}, {Isbn}");
-		}
+		public override string ToString() => string.Format($"{Autor.Nazwisko} {Autor.Imie[0]}., \"{Tytul}\", {Wydawnictwo}, {RokWydania}, {Isbn}");
 
 		public override bool Equals(object obj) {
 			if (obj == null) return false;
@@ -33,11 +31,11 @@ namespace _03Ksiazki {
 			if (this.GetType() != obj.GetType()) return false;
 			Ksiazka k = (Ksiazka)obj;
 			if (
-					(Isbn != null || k.Isbn != null) && //jeżeli któryś Isbn nie jest nullem
-					(Isbn == null || k.Isbn == null ||  //to sprawdzamy czy jeden z nich jest nullem
-					! Isbn.Equals(k.Isbn))              //lub nie są równe
-				)
-				return false;
+					(Isbn != null || k.Isbn != null) && 
+					(Isbn == null || k.Isbn == null ||
+					! Isbn.Equals(k.Isbn))
+				) 
+					return false;
 			if (!string.Equals(Tytul, k.Tytul)) return false;
 			if (!Autor.Equals(Autor, k.Autor)) return false;
 			if (RokWydania != k.RokWydania) return false;
@@ -45,10 +43,9 @@ namespace _03Ksiazki {
 			return true;
 		}
 
-		public override int GetHashCode() {
-			if (Isbn != null)
-				return Isbn.GetHashCode();
-			return ToString().GetHashCode();
+		public override int GetHashCode()
+		{
+			return Isbn != null ? Isbn.GetHashCode() : ToString().GetHashCode();
 		}
 	}
 }

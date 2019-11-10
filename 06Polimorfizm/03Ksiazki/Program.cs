@@ -12,14 +12,14 @@ namespace _03Ksiazki {
 				k3 = new Ksiazka("Jan", "Kowalski", "ABC", 2000, "DEF", "123456"),
 				k4 = new Ksiazka("Adam", "Kos", "XYZ", 2001, "QWERTY", "123456");
 
-			Console.WriteLine("{0}\n{1}\n{2}\n{3}", k1, k2, k3, k4);
-			Console.WriteLine("k1 = k2 {0}", k1.Equals(k2));
-			Console.WriteLine("k3 = k4 {0}", k3.Equals(k4));
+			Console.WriteLine($"{k1}\n{k2}\n{k3}\n{k4}");
+			Console.WriteLine($"k1 = k2 {k1.Equals(k2)}");
+			Console.WriteLine($"k3 = k4 {k3.Equals(k4)}");
 
-			Console.WriteLine("GetHashCode: {0}", k1.GetHashCode());
-			Console.WriteLine("ToString: {0}", k1);
-			Console.WriteLine("GetHashCode: {0}", k3.GetHashCode());
-			Console.WriteLine("ToString: {0}", k3);
+			Console.WriteLine($"GetHashCode: {k1.GetHashCode()}");
+			Console.WriteLine($"ToString: {k1}");
+			Console.WriteLine($"GetHashCode: {k3.GetHashCode()}");
+			Console.WriteLine($"ToString: {k3}");
 		}
 	}
 }

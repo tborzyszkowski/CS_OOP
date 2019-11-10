@@ -13,8 +13,6 @@ namespace _04Zoo {
 		{
 			get => "Equus asinus";
 		}
-		public override string ToString() {
-			return "osioł";
-		}
+		public override string ToString() => "osioł";
 	}
 }

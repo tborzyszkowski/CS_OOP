@@ -9,12 +9,8 @@ namespace _04Zoo {
 		public virtual void WydajGlos() {
 			Console.WriteLine("Zwierze wydają rózne dźwięki...");
 		}
-		public virtual string NazwaLacinska
-		{
-			get { return "Animalia"; }
-		}
-		public override string ToString() {
-			return "zwierze";
-		}
+		public virtual string NazwaLacinska => "Animalia";
+
+		public override string ToString() => "zwierze";
 	}
 }

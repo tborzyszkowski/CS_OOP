@@ -4,17 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _04Zoo {
-	class WilkZaadoptowany : Zwierze {
+namespace _04Zoo
+{
+	class WilkZaadoptowany : Zwierze
+	{
 		private Wilk wilk = new Wilk();
-		public override void WydajGlos() {
+		public override void WydajGlos()
+		{
 			Console.WriteLine(wilk.Wyj());
 		}
-		public override string NazwaLacinska
+		public override string NazwaLacinska => wilk.PodajNazweLacinska();
+
+		public override string ToString()
 		{
-			get { return wilk.PodajNazweLacinska(); }
-		}
-		public override string ToString() {
 			return "wilk";
 		}
 	}

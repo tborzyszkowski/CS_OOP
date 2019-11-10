@@ -4,11 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _04Zoo {
-	static class Fabryka {
-		public static Zwierze Utworz(int i) {
+namespace _04Zoo
+{
+	static class Fabryka
+	{
+		public static Zwierze Utworz(int i)
+		{
 			Zwierze zwierze = null;
-			switch (i) {
+			switch (i)
+			{
 				case 1:
 					zwierze = new Zwierze();
 					break;
@@ -25,7 +29,8 @@ namespace _04Zoo {
 			return zwierze;
 		}
 
-		public static int Menu() {
+		public static int Menu()
+		{
 			Console.Clear();
 			Console.WriteLine("\n\t\t\t1 - Informacje ogólne o zwierzętach");
 			Console.WriteLine("\n\t\t\t2 - Informacje o owcy");
@@ -33,9 +38,11 @@ namespace _04Zoo {
 			Console.WriteLine("\n\t\t\t4 - Informacje o wilkach");
 			Console.WriteLine("\n\t\t\t0 - Koniec");
 			int i;
-			bool b;
-			do {
-				do {
+			do
+			{
+				bool b;
+				do
+				{
 					b = int.TryParse(Console.ReadLine(), out i);
 				} while (!b);
 			} while (0 > i || i > 4);
