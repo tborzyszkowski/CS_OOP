@@ -1,0 +1,128 @@
+﻿@model BiuroRachunkowe.Models.InvoiceHeader
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>InvoiceHeader</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.InvoiceNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvoiceNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InvoiceDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvoiceDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InvoiceStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvoiceStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Voucher)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Voucher)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Remarks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Currency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Currency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExchangeRate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExchangeRate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InvoiceValue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvoiceValue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TransportCost_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TransportCost_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdditionalCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdditionalCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Supplier)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Supplier)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipFrom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShipFrom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeOfTranosport)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TypeOfTranosport)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

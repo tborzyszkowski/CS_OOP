@@ -1,0 +1,130 @@
+﻿@model BiuroRachunkowe.Models.SAD
+
+<script src="@Url.Content("~/Scripts/jquery-3.3.1.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery-ui-1.12.1.min.js")"></script>
+<link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css">
+<h2>Stwórz SAD Importowy</h2>
+
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+
+	<div class="form-horizontal">
+		<hr />
+		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+		<div class="row" style="margin-left:10px">
+			<div class="col-sm-4 form-group">
+				@Html.LabelFor(model => model.SadNumber, htmlAttributes: new { @class = "control-label " })
+				<div>
+					@Html.EditorFor(model => model.SadNumber, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.SadNumber, "", new { @class = "text-danger" })
+				</div>
+			</div>
+
+			<div class="col-sm-4 form-group">
+				@Html.LabelFor(model => model.SadDate, htmlAttributes: new { @class = "control-label " })
+				<div>
+					@Html.EditorFor(model => model.SadDate, new { htmlAttributes = new { @class = "form-control date-picker" } })
+					@Html.ValidationMessageFor(model => model.SadDate, "", new { @class = "text-danger" })
+				</div>
+			</div>
+		</div>
+		<div class="row" style="margin-left:10px">
+			<div class="col-sm-4 form-group">
+				@Html.LabelFor(model => model.Currency, htmlAttributes: new { @class = "control-label " })
+				<div>
+					@Html.DropDownListFor(model => model.Currency, new[] { new SelectListItem { Text = "ZŁ", Value = "PLN" }, new SelectListItem { Text = "USD", Value = "USD" }, new SelectListItem { Text = "EUR", Value = "EUR" } }, new { @class = "form-control" })
+					@Html.ValidationMessageFor(model => model.Currency, "", new { @class = "text-danger" })
+				</div>
+			</div>
+
+			<div class="col-sm-4 form-group">
+				@Html.LabelFor(model => model.ExchangeRate, htmlAttributes: new { @class = "control-label " })
+				<div>
+					@Html.EditorFor(model => model.ExchangeRate, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.ExchangeRate, "", new { @class = "text-danger" })
+				</div>
+			</div>
+		</div>
+		<div class="row" style="margin-left:10px">
+
+
+			<div class="col-sm-4 form-group">
+				@Html.LabelFor(model => model.Paid, htmlAttributes: new { @class = "control-label " })
+				<div>
+					@Html.DropDownListFor(model => model.Paid, new[] { new SelectListItem { Text = "Nie", Value = "F" }, new SelectListItem { Text = "Tak", Value = "T" } }, new { @class = "form-control" })
+					@Html.ValidationMessageFor(model => model.Paid, "", new { @class = "text-danger" })
+				</div>
+			</div>
+			<div class="col-sm-4 form-group">
+				@Html.LabelFor(model => model.PaidDate, htmlAttributes: new { @class = "control-label " })
+				<div>
+					@Html.EditorFor(model => model.PaidDate, new { htmlAttributes = new { @class = "form-control date-picker", @disabled = "disabled" } })
+					@Html.ValidationMessageFor(model => model.PaidDate, "", new { @class = "text-danger" })
+				</div>
+			</div>
+		</div>
+		<div class="row" style="margin-left:10px">
+
+
+			<div class="col-sm-4 form-group">
+				@Html.LabelFor(model => model.Remarks, htmlAttributes: new { @class = "control-label " })
+				<div class="">
+
+					@Html.TextAreaFor(model => model.Remarks, 5, 50, new { @class = "form-control" })
+					@Html.ValidationMessageFor(model => model.Remarks, "", new { @class = "text-danger" })
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-md-10">
+				@Html.ActionLink("Wróć", "SADList", null, new { @class = "btn btn-default" })
+				<input type="submit" value="Stwórz" class="btn btn-default" />
+			</div>
+		</div>
+	</div>
+}
+
+<script type="text/javascript">
+	$(function () {
+		$('.date-picker').datepicker({
+			dateFormat: 'yy-mm-dd'
+		});
+	});
+
+
+	$("#Paid").on("change", function () {
+		if ($(this).val() == "T") {
+			$("#PaidDate").prop("disabled", false);
+			$("#PaidDate").prop("required", true);
+		}
+		else {
+			$("#PaidDate").prop("disabled", true);
+			$("#PaidDate").prop("required", false);
+		}
+	});
+
+	$("#Currency").on("change", function () {
+		let curr = $("#Currency").val();
+		if (curr == "PLN")
+			$("#ExchangeRate").val(1.00);
+		else if (curr == "EUR")
+			$("#ExchangeRate").val(4.30);
+		else if (curr == "USD")
+			$("#ExchangeRate").val(3.85);
+
+	});
+
+	$(document).ready(function () {
+
+		let curr = $("#Currency").val();
+		if (curr == "PLN")
+			$("#ExchangeRate").val(1.00);
+		else if (curr == "EUR")
+			$("#ExchangeRate").val(4.30);
+		else if (curr == "USD")
+			$("#ExchangeRate").val(3.85);
+	});
+
+
+</script>

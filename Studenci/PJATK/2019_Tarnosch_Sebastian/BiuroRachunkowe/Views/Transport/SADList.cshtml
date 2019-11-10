@@ -1,0 +1,288 @@
+﻿@model IEnumerable<BiuroRachunkowe.Models.SAD>
+@using BiuroRachunkowe.Helpers;
+
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<div class="row" style="padding-left:0px">
+
+
+	<div style="float:left;margin-left:5%;width:250px">
+		<h2>SAD Importowy</h2>
+	</div>
+	<div style="float:left; margin-left:28%" id="menuButtons">
+
+		@Html.Partial("~/Views/Transport/_ImportSADMenu.cshtml")
+
+
+	</div>
+
+	<div style="clear:both"></div>
+	<div id="main1" style="padding-left:20px;">
+		
+
+
+				<div style="float:left;margin-top:63px;width:413px">
+					@using (Html.BeginForm("SADList", "Transport", FormMethod.Get))
+					{
+						<div>
+							@Html.Raw(TempData["msg"])
+
+							<text><b>Wyszukaj:</b></text>
+							@if (Session["SearchSAD"] != null)
+							{
+								@Html.TextBox("SearchString", Session["SearchSADIS"].ToString(), new { @class = "form-control", @style = "width:150px;display:inline-block", onchange = "this.form.submit();" })
+							}
+							else
+							{
+								@Html.TextBox("SearchString", null, new { @class = "form-control", @style = "width:150px;display:inline-block", onchange = "this.form.submit();" })
+							}
+
+						</div>
+
+					}
+
+					<table class="table" id="table" style="margin-top:15px;">
+						<tr>
+							<td width="50">
+								@Html.ActionLink("ID", "SADList", new { sort = ViewBag.idd, id = ViewBag.id })
+							</td>
+							<td width="200">
+								@Html.ActionLink("Number", "SADList", new { sort = ViewBag.nr, id = ViewBag.id })
+							</td>
+							<td width="100">
+								@Html.ActionLink("SAD Date", "SADList", new { sort = ViewBag.date, id = ViewBag.id })
+							</td>
+
+
+						</tr>
+
+
+
+						@foreach (var item in Model)
+						{
+							string selected = "";
+							if (item.Id == Convert.ToInt32(Session["SelectedIdIS"]))
+							{
+								selected = "selected";
+							}
+							<tr class="@selected" onclick="location.href='@(Url.Action("SADList", "Transport", new { id = item.Id }))'" onmouseover="ChangeBackgroundColor(this)" onmouseout="RestoreBackgroundColor(this)" style="cursor:pointer">
+
+
+								<td>
+									@Html.DisplayFor(modelItem => item.Id)
+								</td>
+								<td>
+									@Html.SADNumberToFormat(item.SadNumber)
+								</td>
+								<td>
+									@{
+										string x = item.SadDate.ToString("yyyy-MM-dd");
+									}
+									@x
+								</td>
+
+							</tr>
+
+
+
+
+						}
+					</table>
+				</div>
+				
+				<div style="float:left;margin-left:10px;margin-top:39px">
+
+
+					@if (ViewBag.Details == null)
+					{
+
+
+
+						if (User.IsInRole("Intern"))
+						{
+							@Html.ActionLink("Stwórz", "SADCreate", null, new { @class = "btn btn-default ", @style = "margin-top:9px;margin-left:12px;width:120px" ,@disabled="disabled",onclick="return false"})<br />
+
+						}
+						else
+						{
+							@Html.ActionLink("Stwórz", "SADCreate", null, new { @class = "btn btn-default ", @style = "margin-top:9px;margin-left:12px;width:120px" })<br />
+
+						}
+
+						@Html.ActionLink("Edytuj", "SADCreate", null, new { @class = "btn btn-default ", onclick = "return false", @style = "margin-top:9px;margin-left:12px;width:120px", @disabled = "disabled" })<br />
+						@Html.ActionLink("Usuń", "SADCreate", null, new { @class = "btn btn-default ", onclick = "return false", @style = "margin-top:9px;margin-left:12px;width:120px", @disabled = "disabled" })<br />
+
+
+
+					}
+
+
+
+
+				</div>
+
+
+				<div style="float:left;padding-left:20px;margin-top:39px">
+
+					@if (ViewBag.Details != null)
+					{
+
+						foreach (var item in (ViewBag.Details as List<BiuroRachunkowe.Models.SAD>))
+						{
+							<table class=" table-borderlesse" style="margin:0px;padding:0px;text-align:center" cellpadding="100">
+								<tr>
+									<td></td>
+									<td style="padding:5px"><h2>Szczegóły:</h2></td>
+									<td></td>
+								</tr>
+							</table>
+							<table class="table table-striped" cellpadding="100">
+								<tr>
+
+									<td>
+										@if (User.IsInRole("Intern"))
+										{
+											@Html.ActionLink("Stwórz", "SADCreate", null, new { @class = "btn btn-default ", @style = "width:120px" ,onclick="return false",disabled="disabled"})
+										}
+										else
+										{
+											@Html.ActionLink("Stwórz", "SADCreate", null, new { @class = "btn btn-default ", @style = "width:120px" })
+
+										}
+									</td>
+
+
+									<td>SAD Id:</td>
+									<td> @item.Id</td>
+
+								</tr>
+								<tr>
+
+
+									<td>
+										@if (User.IsInRole("Intern"))
+										{
+											@Html.ActionLink("Edytuj", "SADEdit", new { id = item.Id }, new { @class = "btn btn-default ", @style = "width:120px",onclick="return false",disabled="disabled" })
+										}
+										else
+										{
+											@Html.ActionLink("Edytuj", "SADEdit", new { id = item.Id }, new { @class = "btn btn-default ", @style = "width:120px" })
+										}
+									</td>
+
+									<td>Numer SAD:</td>
+									<td>
+										@Html.SADNumberToFormat(item.SadNumber)
+									</td>
+
+
+								</tr>
+								<tr>
+
+									<td>
+										@using (Html.BeginForm("SADDelete", "Home", FormMethod.Post))
+										{
+											@Html.AntiForgeryToken()
+
+											@Html.Hidden("id", Convert.ToInt32(Session["SelectedIdIS"]))
+											if (User.IsInRole("Intern"))
+											{
+												<input type="submit" value="Usuń" class="btn btn-default col-sm-4" style="width:120px" disabled onclick="return false;" />
+											}
+											else
+											{
+												<input type="submit" value="Usuń" class="btn btn-default col-sm-4" style="width:120px" onclick="return confirm('Czy na pewno chcesz usunąć SAD')" />
+
+											}
+										}
+
+
+									</td>
+
+
+									<td>Data SAD:</td>
+
+									<td>
+
+										@Html.DateToFormat(item.SadDate)
+									</td>
+
+								</tr>
+
+								<tr>
+									<td></td>
+									<td>Waluta:</td>
+									<td> @item.Currency</td>
+
+								</tr>
+								<tr>
+									<td></td>
+
+									<td>Kurs:</td>
+									<td> @item.ExchangeRate</td>
+
+								</tr>
+
+
+
+
+								<tr>
+									<td></td>
+									<td>Zapłacono?:</td>
+									<td> @item.Paid</td>
+
+								</tr>
+								<tr>
+									<td></td>
+									<td>Data zapłaty:</td>
+									<td>
+										@if (item.PaidDate.HasValue)
+										{
+											@Html.DateToFormat(item.PaidDate.Value)
+										}
+
+									</td>
+
+								</tr>
+
+								<tr style="word-wrap:break-word;max-width: 350px;">
+									<td></td>
+									<td>Komentarz:</td>
+									<td style="word-wrap: break-word;max-width: 350px;"> @item.Remarks</td>
+
+								</tr>
+
+
+							</table>
+						}
+					}
+
+				</div>
+				<div style="clear:both"></div>
+
+
+
+
+
+			
+</div>
+
+<script type="text/javascript">
+	function ChangeBackgroundColor(row) {
+		row.style.backgroundColor = "#a4d4e6";
+	}
+
+	function RestoreBackgroundColor(row) {
+		if ($(row).attr('class') == "selected") {
+			row.style.backgroundColor = "#a4d4e6";
+		}
+		else {
+			row.style.backgroundColor = "#ffffff";
+		}
+	}
+
+	$(document).ready(function () {
+		var btn = document.getElementById("Header");
+		btn.style.backgroundColor = "#e6e6e6";
+	});
+</script>

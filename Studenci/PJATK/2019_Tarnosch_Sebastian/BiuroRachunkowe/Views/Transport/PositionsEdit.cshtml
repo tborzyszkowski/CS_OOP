@@ -1,0 +1,93 @@
+﻿@model BiuroRachunkowe.Models.SadPositions
+
+
+
+<h2>Edytuj Pozycję Id:@Model.Id</h2>
+
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+
+	<div class="form-horizontal">
+		<hr />
+		@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+		@Html.HiddenFor(model => model.Id)
+		@Html.HiddenFor(model => model.IdSad)
+		<div class="row" style="margin-left:10px">
+			<div class="form-group col-sm-4">
+				@Html.LabelFor(model => model.HSCode, htmlAttributes: new { @class = "control-label " })
+
+				@Html.DropDownListFor(model => model.HSCode,(SelectList)ViewBag.HSDDL,  new { @class = "form-control" } )
+				@Html.ValidationMessageFor(model => model.HSCode, "", new { @class = "text-danger" })
+
+			</div>
+
+			<div class="form-group col-sm-4">
+				@Html.LabelFor(model => model.CountryOfOrigin, htmlAttributes: new { @class = "control-label " })
+
+				@Html.DropDownListFor(model => model.CountryOfOrigin,(SelectList)ViewBag.COODDL , new { @class = "form-control" } )
+				@Html.ValidationMessageFor(model => model.CountryOfOrigin, "", new { @class = "text-danger" })
+
+			</div>
+		</div>
+
+
+		<div class="row" style="margin-left:10px">
+			<div class="form-group col-sm-4">
+				@Html.Label("Stawka cła[%]", htmlAttributes: new { @class = "control-label " })
+				@Html.EditorFor(model => model.Rate, new { htmlAttributes = new { @class = "form-control",@Value=(Model.Rate* 100).ToString("#0.##") } })
+				@Html.ValidationMessageFor(model => model.Rate, "", new { @class = "text-danger" })
+			</div>
+
+			<div class="form-group col-sm-4">
+				@Html.LabelFor(model => model.PositionValue, htmlAttributes: new { @class = "control-label " })
+				@Html.EditorFor(model => model.PositionValue, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.PositionValue, "", new { @class = "text-danger" })
+			</div>
+		</div>
+
+		<div class="row" style="margin-left:10px">
+
+
+			<div class="form-group col-sm-4">
+				@Html.LabelFor(model => model.DutyValue, htmlAttributes: new { @class = "control-label " })
+				@Html.EditorFor(model => model.DutyValue, new { htmlAttributes = new { @class = "form-control" } })
+				@Html.ValidationMessageFor(model => model.DutyValue, "", new { @class = "text-danger" })
+			</div>
+
+			<div class="form-group col-sm-4">
+				<button onclick="return countDuty();"  style="margin-top:27px" class="btn btn-default"> Wylicz wartość cła</button>
+			</div>
+
+		</div>
+
+
+		<div class="form-group">
+			<div class=" col-md-10">
+				@Html.ActionLink("Wróć", "Positionslist", null, new { @class = "btn btn-default" })
+				<input type="submit" value="Zapisz" class="btn btn-default" />
+			</div>
+		</div>
+	</div>
+}
+	<script type="text/javascript">
+
+		function countDuty() {
+			var rate = document.getElementById("Rate").value;
+			var valueOfPos = document.getElementById("PositionValue").value;
+			var duty = document.getElementById("DutyValue").value;
+			var result = Math.round(parseFloat(rate) / 100 * parseFloat(valueOfPos) * 100) / 100;
+
+			if (rate != null && valueOfPos != null) {
+				if (result != duty) {
+					var ChangeValue = confirm("Czy na pewno podmienić dane?");
+					if (ChangeValue == true) {
+						document.getElementById("DutyValue").value = result;
+						return false;
+					}
+				}
+			}
+			return false;
+		};
+
+	</script>

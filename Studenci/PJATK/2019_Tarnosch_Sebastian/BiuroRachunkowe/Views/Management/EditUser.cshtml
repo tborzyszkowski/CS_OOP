@@ -1,0 +1,44 @@
+﻿@model BiuroRachunkowe.Models.UserEditViewModel
+
+@{
+	ViewBag.Title = "Edit";
+}
+
+<h2>Edycja ról dla użytkownika   @Html.DisplayFor(model => model.UserName)</h2>
+
+@using (Html.BeginForm())
+{
+	@Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+
+	@Html.HiddenFor(x => x.Id, Model.Id)
+	@foreach (var role in (SelectList)ViewBag.RoleId)
+	{
+
+		
+		
+			if (Model.roles.Any(role.Value.Contains))
+			{
+
+				<input type="checkbox" name="SelectedRoles" value="@role.Value" class="checkbox-inline" checked />
+				@Html.Label(role.Value, new { @class = "control-label" })<br />
+			}
+			else
+			{
+				<input type="checkbox" name="SelectedRoles" value="@role.Value" class="checkbox-inline" />
+				@Html.Label(role.Value, new { @class = "control-label" })<br />
+			}
+		
+
+	}
+	<div class="form-group">
+		<div class="col-md-offset-2 col-md-10">
+			<input type="submit" value="Zapisz" class="btn btn-default" />
+		</div>
+	</div>
+</div>
+}
+	<div>
+		@Html.ActionLink("Wróć", "UserList",null,new { @class="btn btn-default"})
+	</div>
