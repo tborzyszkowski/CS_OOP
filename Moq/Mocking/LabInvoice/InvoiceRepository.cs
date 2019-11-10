@@ -22,9 +22,9 @@ namespace LabInvoice
 			dataSource.Remove(entity);
 		}
 
-		public Invoice FindById(int Id)
+		public Invoice FindById(int id)
 		{
-			return dataSource.Find(x => x.Id == Id);
+			return dataSource.Find(x => x.Id == id);
 		}
 
 		public void Update(Invoice entity)

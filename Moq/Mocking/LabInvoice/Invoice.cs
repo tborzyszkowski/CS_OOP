@@ -12,10 +12,8 @@ namespace LabInvoice
 		public string Customer { get; set; }
 		public List<InvoiceItem> Items { get; set; }
 
-		public bool Equals(IEntity x, IEntity y)
-		{
-			return x.Id == y.Id;
-		}
+		public bool Equals(IEntity x, IEntity y) 
+			=> y != null && (x != null && x.Id == y.Id);
 
 		public int GetHashCode(IEntity obj)
 		{

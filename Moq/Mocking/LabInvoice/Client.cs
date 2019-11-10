@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace LabInvoice
 {
 	public class Client
-	{
-
+	{ 
 		private IRepository<Invoice> myInvoices;
 
 		public Client(IRepository<Invoice> repo)
