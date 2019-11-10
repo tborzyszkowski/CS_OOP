@@ -1,0 +1,26 @@
+# Zadanie 1
+
+Wzoruj¹c siê na przyk³adzie ``01Czolg`` stworzyæ zestaw klas o podobnej funkcjonalnoœci dotycz¹cy samochodu.
+Samochód posiada:
+- po³o¿enie na mapie 
+- markê i model
+- silnik o zadanej pojemnoœci
+
+Podobnie jak w przypadku czo³gu samochód powinien byæ wyposa¿ony w odpowiednie konstuktory, 
+w tym w realizacjê wzorca prototyp.
+
+# Zadanie 2
+
+Twoja firma opracowuje program kadrowy dla pewnej firmy. Twoim zadaniem jest stworzenie i
+przetestowanie klasy ``Osoba``. O ka¿dej osobie powinieneœ posiadaæ nastêpuj¹ce informacje:
+- imiê i nazwisko
+- numerEwidencyjny
+- adresZamieszkania. Klasa ``Adres`` zawiera nastêpuj¹ce dane:
+	- nazwaUlicy, miejscowosc
+	- numerDomu
+	- numerMieszkania
+
+Zak³adaj¹c, ¿e najczêœciej spotykanym nazwiskiem jest *Kowalski*, firma znajduje siê w *Warszawie* 
+i ma mieszkania pracownicze przy ulicy *Aleje Jerozolimskie*, stwórz odpowiednie konstruktory. 
+
+Dodaj te¿ mo¿liwoœæ kopiowania p³ytkiego i kopiowania g³êbokiego do klasy ``Osoba``.
