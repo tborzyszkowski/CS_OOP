@@ -1,0 +1,1 @@
+All examples come from pluralsight.com, course: Mocking With Moq.

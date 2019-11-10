@@ -11,7 +11,7 @@ namespace _01Instrumenty {
 			Console.WriteLine("A - trąba");
 			Console.WriteLine("B - bęben");
 			char c = Console.ReadKey().KeyChar;
-			instr.Graj2();
+			//instr.Graj2();
 		   // ((Traba)instr).Dmuchaj();
 			switch (c) {
 				case 'a':

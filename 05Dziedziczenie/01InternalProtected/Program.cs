@@ -6,24 +6,26 @@ using System.Threading.Tasks;
 using _00OuterAssembly;
 
 namespace _01InternalProtected {
-    //class Wewnetrzna {
-    //    internal void g() {
-    //        Zewnetrzna z = new Zewnetrzna();
-    //        z.ff();
-    //        Console.WriteLine("InternalProtected.Wewnetrzna.g()");
-    //    }
-    //}
-    class Wewnetrzna : ZewnetrznaOuter {
-        internal void g() {
-            f();
-            Console.WriteLine("InternalProtected.Wewnetrzna.g()");
-        }
-    }
-    class Program {
-        static void Main(string[] args) {
-            Wewnetrzna w = new Wewnetrzna();
-            w.g();
-        }
-    }
+	class Wewnetrzna
+	{
+		internal void g()
+		{
+			Zewnetrzna z = new Zewnetrzna();
+			z.fff();
+			Console.WriteLine("InternalProtected.Wewnetrzna.g()");
+		}
+	}
+	//class Wewnetrzna : ZewnetrznaOuter {
+	//	internal void g() {
+	//		f();
+	//		Console.WriteLine("InternalProtected.Wewnetrzna.g()");
+	//	}
+	//}
+	class Program {
+		static void Main(string[] args) {
+			Wewnetrzna w = new Wewnetrzna();
+			w.g();
+		}
+	}
 
 }

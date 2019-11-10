@@ -1,16 +1,26 @@
 ﻿using System;
 
-namespace _01Instrumenty {
-	class Instrument {
+namespace _01Instrumenty
+{
+	class Instrument
+	{
 		protected int waga = 0;
-		public void Graj1() {
+
+		public void Graj1()
+		{
 			Console.WriteLine("Instrument.Graj1: Cisza");
 		}
-		public virtual void Graj2() {
+		public virtual void Graj2()
+		{
 			Console.WriteLine("Instrument.Graj2: Cisza 2!!!");
 		}
-		public override bool Equals(object o) {
-			return this.waga == (o as Instrument)?.waga;
+		//public override bool Equals(object o) {
+		//	return this.waga == (o as Instrument)?.waga;
+		//}
+		public override bool Equals(object obj)
+		{
+			return obj is Instrument instrument &&
+				   waga == instrument.waga;
 		}
 	}
 }
