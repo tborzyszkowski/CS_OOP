@@ -1,8 +1,9 @@
-﻿public enum Severity {
-    Verbose,
-    Trace,
-    Information,
-    Warning,
-    Error,
-    Critical
+﻿public enum Severity
+{
+	Verbose,
+	Trace,
+	Information,
+	Warning,
+	Error,
+	Critical
 }
