@@ -10,8 +10,6 @@ namespace _03SortedDictionary
 	{
 		static void Main(string[] args)
 		{
-			// Create a new SortedDictionary of strings, with string keys 
-			// and a case-insensitive comparer for the current culture.
 			SortedDictionary<string, string> openWith =
 				new SortedDictionary<string, string>(
 					StringComparer.CurrentCultureIgnoreCase)
@@ -21,12 +19,6 @@ namespace _03SortedDictionary
 					{"DIB", "paint.exe"}, 
 					{"rtf", "wordpad.exe"}
 				};
-
-			// Add some elements to the dictionary.
-
-			// Try to add a fifth element with a key that is the same 
-			// except for case; this would be allowed with the default
-			// comparer.
 			try
 			{
 				openWith.Add("BMP", "paint.exe");
@@ -35,8 +27,6 @@ namespace _03SortedDictionary
 			{
 				Console.WriteLine("\nBMP is already in the dictionary.");
 			}
-
-			// List the contents of the sorted dictionary.
 			Console.WriteLine();
 			foreach (var kvp in openWith)
 			{

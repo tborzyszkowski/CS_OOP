@@ -27,12 +27,12 @@ namespace _02Interfejs {
 			Obliczenie2 o2 = new Obliczenie2();
 
 			w = o1;
-			Console.WriteLine("w: {0}", w.Funkcja(1));
+			Console.WriteLine($"w: {w.Funkcja(1)}");
 			w = o2;
-			Console.WriteLine("w: {0}", w.Funkcja(1));
+			Console.WriteLine($"w: {w.Funkcja(1)}");
 
-			Console.WriteLine("mojeObliczenie(o1, 1): {0}", MojeObliczenie(o1, 1));
-			Console.WriteLine("mojeObliczenie(o2, 1): {0}", MojeObliczenie(o2, 1));
+			Console.WriteLine($"mojeObliczenie(o1, 1): {MojeObliczenie(o1, 1)}");
+			Console.WriteLine($"mojeObliczenie(o2, 1): {MojeObliczenie(o2, 1)}");
 
 		}
 	}

@@ -17,11 +17,11 @@ namespace _03JawnaImplementacja {
 		}
 		void IPilkarz.Strzelaj() {
 			int x = 1;
-			Console.WriteLine("Strzelam do bramki {0}", x);
+			Console.WriteLine($"Strzelam do bramki {x}");
 		}
 		void IZolnierz.Strzelaj() {
 			int x = 2;
-			Console.WriteLine("Strzelam do celu {0}", x);
+			Console.WriteLine($"Strzelam do celu {x}");
 		}
 	}
 	class Program {

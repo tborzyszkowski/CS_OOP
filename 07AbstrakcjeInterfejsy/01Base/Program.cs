@@ -34,10 +34,10 @@ namespace _01Base {
 			ODwa od = new ODwa();
 
 			nb = oj;
-			Console.WriteLine("A: {0}, {1}", nb.Nastepny(1), nb.ZwiekszODwa(1));
+			Console.WriteLine($"A: {nb.Nastepny(1)}, {nb.ZwiekszODwa(1)}");
 
 			nb = od;
-			Console.WriteLine("B: {0}, {1}", nb.Nastepny(1), nb.ZwiekszODwa(1));
+			Console.WriteLine($"B: {nb.Nastepny(1)}, {nb.ZwiekszODwa(1)}");
 		}
 	}
 }
