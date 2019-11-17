@@ -1,5 +1,5 @@
 # Zadanie 1
--------------
+
 Opieraj¹c siê na klasie ``Punkt`` utworzyæ klasê ``Punkt3D`` 
 dziedzicz¹c¹ po klasie ``Punkt``, która ma reprezentowaæ punkt w przestrzeni 3D.
 Dodaæ odpowiedniki metod klasy ``Punkt`` w przestrzeni 3D.
@@ -8,7 +8,7 @@ Co stanie siê po rzutowaniu obiektu klasy 3D *w górê*?
 Jak powinno wygl¹daæ poprawne rozwi¹zanie?
 
 # Zadanie 2
--------------
+
 Twoim zadaniem jest zaimplementowanie i przetestowanie hierarchii sk³adaj¹cej siê z nastêpuj¹cych klas: 
 - ``Osoba``, ``Student``, ``Wyk³adowca`` oraz ``Stypendysta``. 
 Poszczególne klasy zawieraj¹ nastêpuj¹ce cechy:
