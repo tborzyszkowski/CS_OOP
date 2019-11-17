@@ -10,7 +10,7 @@ który wyœwietli dostêpne samochody i sortuje je wed³ug nastêpuj¹cych kryteriów:
 - roku produkcji
 - ceny
 
-Wykorzystaj interface ``IComparable<T>` lub ``IComparer<T>``.
+Wykorzystaj interface ``IComparable<T>`` lub ``IComparer<T>``.
 
 # Zadanie 2
 
