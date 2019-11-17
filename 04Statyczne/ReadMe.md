@@ -1,6 +1,6 @@
 # Zadanie 
 -------------
-Opieraj¹c siê na przyk³adzie rozszerzania klasy double, rozszerzyæ klasê int o operacje:
-- ``silnia``: wywo³anie ``5.silnia()``
-- ``dwumian`` Newtona: wywo³anie ``10.dwumian(5)``
+OpierajÄ…c siÄ™ na przykÅ‚adzie rozszerzania klasy double, rozszerzyÄ‡ klasÄ™ ``int`` o operacje:
+- ``silnia``: wywoÅ‚anie ``5.silnia()``
+- ``dwumian`` Newtona: wywoÅ‚anie ``10.dwumian(5)``
 
