@@ -15,4 +15,4 @@ Wykorzystaj interface ``IComparable<T>` lub ``IComparer<T>``.
 # Zadanie 2
 
 Przeúledü przyk≥ady wykorzystania LINQ ze strony:
-(101 LINQ Samples)[https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b]
+[101 LINQ Samples](https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b).

@@ -11,9 +11,9 @@ Napisz program testuj¹cy utworzone figury.
 
 Figury, które powinieneœ zaimplementowaæ na pocz¹tku to:
 - ``Odcinek``
--``Ko³o`` (czym s¹ wierzcho³ki?)
--``Trójk¹t``
--``Kwadrat``
+- ``Ko³o`` (czym s¹ wierzcho³ki?)
+- ``Trójk¹t``
+- ``Kwadrat``
 
 Zwróæ uwagê, ¿e ``Trójk¹t`` oraz ``Kwadrat`` s¹ wielok¹tami. Ka¿dy wielok¹t posiada takie cechy jak:
 - wspó³rzêdne wierzcho³ków wielok¹ta
