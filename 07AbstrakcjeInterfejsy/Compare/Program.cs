@@ -37,6 +37,9 @@ namespace Compare
 			Console.WriteLine(
 				String.Join<Person>("\n", persons.ToArray())
 				);
+			Console.WriteLine(
+				persons.Aggregate<Person, string>("Persons: ", (a, p) => a + "\n" + p)
+			);
 		}
 	}
 }
