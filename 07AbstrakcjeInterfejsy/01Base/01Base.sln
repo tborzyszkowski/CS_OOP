@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01Base", "01Base.csproj", "{F9D4C0CD-3A86-4C3C-A1B4-D314EECF93BE}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03JawnaImplementacja", "..\03JawnaImplementacja\03JawnaImplementacja.csproj", "{1C0C3EE7-69E1-4F24-BC6C-7CE1C8375796}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04WczesnaImplementacja", "..\04WczesnaImplementacja\04WczesnaImplementacja.csproj", "{9FE125BF-B7B0-40FC-9A31-48C2AF9E4E48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Compare", "..\Compare\Compare.csproj", "{31989283-EADA-446F-A84E-7CFEA2BAC293}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +35,15 @@ Global
 		{9FE125BF-B7B0-40FC-9A31-48C2AF9E4E48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FE125BF-B7B0-40FC-9A31-48C2AF9E4E48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FE125BF-B7B0-40FC-9A31-48C2AF9E4E48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31989283-EADA-446F-A84E-7CFEA2BAC293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31989283-EADA-446F-A84E-7CFEA2BAC293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31989283-EADA-446F-A84E-7CFEA2BAC293}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31989283-EADA-446F-A84E-7CFEA2BAC293}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {94F17D8C-3817-412A-9358-F5A00E8EEDB4}
 	EndGlobalSection
 EndGlobal
