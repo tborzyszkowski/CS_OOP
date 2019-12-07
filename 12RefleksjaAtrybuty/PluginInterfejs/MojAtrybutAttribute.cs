@@ -2,24 +2,17 @@
 
 namespace PluginInterfejs
 {
-    [AttributeUsage(AttributeTargets.Class)]
-    public class MojAtrybutAttribute : Attribute
-    {
-        private string autor;
-        public string Autor
-        {
-            get { return autor; }
-        }
-        private string opis;
-        public string Opis
-        {
-            get { return opis; }
-        }
+	[AttributeUsage(AttributeTargets.Class)]
+	public class MojAtrybutAttribute : Attribute
+	{
+		public string Autor { get; } 
 
-        public MojAtrybutAttribute(string autor, string opis)
-        {
-            this.autor = autor;
-            this.opis = opis;
-        }
-    }
+		public string Opis { get;  }
+
+		public MojAtrybutAttribute(string autor, string opis)
+		{
+			this.Autor = autor;
+			this.Opis = opis;
+		}
+	}
 }

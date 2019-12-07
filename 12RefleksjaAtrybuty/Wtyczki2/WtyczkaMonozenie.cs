@@ -7,21 +7,11 @@ using PluginInterfejs;
 
 namespace Wtyczki2
 {
-    [MojAtrybutAttribute("Michał Włodarczyk", "Wtyczka umożliwia mnożenie dwóch liczb rzeczywistych")]
-    public class WtyczkaMonozenie : IMojPlugin
-    {
-        #region IMojPlugin Members
+	[MojAtrybutAttribute("Michał Włodarczyk", "Wtyczka umożliwia mnożenie dwóch liczb rzeczywistych")]
+	public class WtyczkaMonozenie : IMojPlugin
+	{
+		public string Menu => "Mnoży dwie liczby";
 
-        public string Menu
-        {
-            get { return "Mnoży dwie liczby"; }
-        }
-
-        public double RobCos(double x, double y)
-        {
-            return x * y;
-        }
-
-        #endregion
-    }
+		public double RobCos(double x, double y) => x * y;
+	}
 }

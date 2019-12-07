@@ -5,9 +5,9 @@ using System.Text;
 
 namespace PluginInterfejs
 {
-    public interface IMojPlugin
-    {
-        string Menu { get; }
-        double RobCos(double x, double y);
-    }
+	public interface IMojPlugin
+	{
+		string Menu { get; }
+		double RobCos(double x, double y);
+	}
 }

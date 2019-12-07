@@ -1,23 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using PluginInterfejs;
+﻿using PluginInterfejs;
 
 
-namespace Wtyczki3 {
-    [MojAtrybutAttribute("Tomasz Borzyszkowski", "Wtyczka umożliwia dzielenie dwóch liczb rzeczywistych")]
-    public class WtyczkaDzielenie : IMojPlugin {
-        #region IMojPlugin Members
+namespace Wtyczki3
+{
+	[MojAtrybutAttribute("Tomasz Borzyszkowski", "Wtyczka umożliwia dzielenie dwóch liczb rzeczywistych")]
+	public class WtyczkaDzielenie : IMojPlugin
+	{
+		public string Menu => "Dzieli dwie liczby";
 
-        public string Menu {
-            get { return "Dzieli dwie liczby"; }
-        }
-
-        public double RobCos(double x, double y) {
-            return x / y;
-        }
-
-        #endregion
-    }
+		public double RobCos(double x, double y) => x / y;
+	}
 }
