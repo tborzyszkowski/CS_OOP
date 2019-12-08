@@ -26,3 +26,12 @@ zastosowanie własnych layoutów: 10%
 modyfikacja routingu RESTowego: 5%
 zarządzanie stanem aplikacji: 5%
 umieszczenie strony na Azure: 5%
+
+
+----
+## Materiały dodatkowe
+
+- [Getting Started with ASP.NET MVC 5](https://docs.microsoft.com/pl-pl/aspnet/mvc/overview/getting-started/introduction/)
+- [ASP.NET MVC Pattern](https://dotnet.microsoft.com/apps/aspnet/mvc)
+- [Overview of ASP.NET Core MVC](https://docs.microsoft.com/en-gb/aspnet/core/mvc/overview?view=aspnetcore-3.1)
+- [CodeProject: Learn MVC Project in 7 days](https://www.codeproject.com/Articles/866143/Learn-MVC-Project-in-days-Day)
