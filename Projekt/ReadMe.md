@@ -16,16 +16,16 @@
 
 ### Widoki: 35%
 
-umiejętność + przykład ręcznego rozszerzenia widoku: 5%
-widoki częściowe + komunikacja z widokiem podstawowym: 10%
-zastosowanie podstawowych helperów + definicja własnych: 10%
-zastosowanie własnych layoutów: 10%
+- umiejętność + przykład ręcznego rozszerzenia widoku: 5%
+- widoki częściowe + komunikacja z widokiem podstawowym: 10%
+- zastosowanie podstawowych helperów + definicja własnych: 10%
+- zastosowanie własnych layoutów: 10%
 
 ### Extra: 15%
 
-modyfikacja routingu RESTowego: 5%
-zarządzanie stanem aplikacji: 5%
-umieszczenie strony na Azure: 5%
+- modyfikacja routingu RESTowego: 5%
+- zarządzanie stanem aplikacji: 5%
+- umieszczenie strony na Azure: 5%
 
 
 ----
