@@ -3,62 +3,52 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Bank
-{
-    class Osoba
-    {
-        public string Imie;
-        public string Nazwisko;
-    }
+namespace Bank {
+	class Osoba {
+		public string Imie;
+		public string Nazwisko;
+	}
 
-    class Konto
-    {
-        public Osoba Wlasciciel;
-        private decimal saldo = 0;
-        private int pin = 0;
+	class Konto {
+		public Osoba Wlasciciel;
+		private decimal _saldo = 0;
+		private int _pin = 0;
 
-        private bool SprawdzPin(int pin)
-        {
-            if (this.pin == pin)
-                return true;
-            return false;
-        }
+		private bool SprawdzPin(int pin)
+		{
+			return this._pin == pin;
+		}
 
-        public void DokonajWplaty(decimal kwota)
-        {
-            if (kwota < 0)
-                throw new ArgumentException("Wpłacana kwota nie może być mniejsza od zera");
-            saldo += kwota;
-        }
+		public void DokonajWplaty(decimal kwota) {
+			if (kwota < 0)
+				throw new ArgumentException("Wpłacana kwota nie może być mniejsza od zera");
+			_saldo += kwota;
+		}
 
-        public string DokonajWyplaty(decimal kwota, int pin)
-        {
-            if (!SprawdzPin(pin) || saldo < kwota)
-                return "Operacja anulowana";
-            saldo -= kwota;
-            return "Operacje zakończono pomyślnie";
-        }
+		public string DokonajWyplaty(decimal kwota, int pin) {
+			if (SprawdzPin(pin) && _saldo >= kwota)
+			{
+				_saldo -= kwota;
+				return "Operacje zakończono pomyślnie";
+			}
 
-        public bool ZmienPin(int nowy, int stary)
-        {
-            if (SprawdzPin(stary))
-            {
-                pin = nowy;
-                return true;
-            }
-            return false;
-        }
+			return "Operacja anulowana";
+		}
+
+		public bool ZmienPin(int nowy, int stary) {
+			if (!SprawdzPin(stary)) return false;
+			_pin = nowy;
+			return true;
+		}
 
 
-        public string PobierzInformacje(int pin)
-        {
-            if (SprawdzPin(pin))
-            {
-                return string.Format("Pan(i) {0} {1} posiada na koncie: {2}",
-                        Wlasciciel.Imie, Wlasciciel.Nazwisko, saldo);
-            }
-            return "Brak dostępu";
-        }
+		public string PobierzInformacje(int pin) {
+			if (SprawdzPin(pin))
+			{
+				return $"Pan(i) {Wlasciciel.Imie} {Wlasciciel.Nazwisko} posiada na koncie: {_saldo}";
+			}
+			return "Brak dostępu";
+		}
 
-    }
+	}
 }
