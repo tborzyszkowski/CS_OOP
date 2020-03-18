@@ -1,6 +1,4 @@
-﻿namespace AssertDemo
-{
-    public class Enemy
-    {
-    }
+﻿namespace AssertDemo {
+	public class Enemy {
+	}
 }

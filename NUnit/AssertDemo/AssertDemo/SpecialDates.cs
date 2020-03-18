@@ -1,7 +1,5 @@
-﻿namespace AssertDemo
-{
-    public enum SpecialDates
-    {
-        NewMillennium
-    }
+﻿namespace AssertDemo {
+	public enum SpecialDates {
+		NewMillennium
+	}
 }
