@@ -35,6 +35,5 @@ namespace _01Czolg
 			y = noweY;
 		}
 		#endregion
-
 	}
 }

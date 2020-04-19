@@ -32,7 +32,6 @@ namespace _01PolePowierzchni
 			Console.WriteLine($"Ar = {p1.Ar}, Hektar = {p1.Hektar}, M2 = {p1.MetrKwadratowy}");
 			p1.Ar = 7;
 			Console.WriteLine($"Ar = {p1.Ar}, Hektar = {p1.Hektar}, M2 = {p1.MetrKwadratowy}");
-			Console.ReadKey();
 		}
 	}
 }

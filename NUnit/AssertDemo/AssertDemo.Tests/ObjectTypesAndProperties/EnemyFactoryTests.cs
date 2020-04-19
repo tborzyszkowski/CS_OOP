@@ -1,53 +1,47 @@
 ﻿using NUnit.Framework;
 
-namespace AssertDemo.Tests.ObjectTypesAndProperties
-{
-    [TestFixture]
-    public class EnemyFactoryTests
-    {
-        [Test]
-        public void ShouldCreateNormalEnemy()
-        {
-            var sut = new EnemyFactory();
+namespace AssertDemo.Tests.ObjectTypesAndProperties {
+	[TestFixture]
+	public class EnemyFactoryTests {
+		[Test]
+		public void ShouldCreateNormalEnemy() {
+			var sut = new EnemyFactory();
 
-            object enemy = sut.Create(false);
+			object enemy = sut.Create(false);
 
-            Assert.That(enemy, Is.TypeOf<NormalEnemy>());
-        }
+			Assert.That(enemy, Is.TypeOf<NormalEnemy>());
+		}
 
 
-        [Test]
-        public void ShouldCreateBossEnemy()
-        {
-            var sut = new EnemyFactory();
+		[Test]
+		public void ShouldCreateBossEnemy() {
+			var sut = new EnemyFactory();
 
-            object enemy = sut.Create(true);
+			object enemy = sut.Create(true);
 
-            Assert.That(enemy, Is.TypeOf<BossEnemy>());
-        }
-
-
-        [Test]
-        public void ShouldBeOfBaseType()
-        {
-            var sut = new EnemyFactory();
-
-            object enemy = sut.Create(true);
-
-            Assert.That(enemy, Is.InstanceOf<Enemy>());            
-        }
+			Assert.That(enemy, Is.TypeOf<BossEnemy>());
+		}
 
 
-        [Test]
-        public void ShouldHaveExtraPower()
-        {
-            var sut = new EnemyFactory();
+		[Test]
+		public void ShouldBeOfBaseType() {
+			var sut = new EnemyFactory();
 
-            object enemy = sut.Create(true);
+			object enemy = sut.Create(true);
 
-            Assert.That(enemy, Has.Property("ExtraPower"));
+			Assert.That(enemy, Is.InstanceOf<Enemy>());
+		}
 
-            //Assert.That(enemy, Has.Property("SomeOtherProperty"));
-        }
-    }
+
+		[Test]
+		public void ShouldHaveExtraPower() {
+			var sut = new EnemyFactory();
+
+			object enemy = sut.Create(true);
+
+			Assert.That(enemy, Has.Property("ExtraPower"));
+
+			//Assert.That(enemy, Has.Property("SomeOtherProperty"));
+		}
+	}
 }

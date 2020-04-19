@@ -1,33 +1,29 @@
 ﻿using NUnit.Framework;
 
-namespace AttributesDemo.Tests.DataDrivenTests
-{  
-    [TestFixture]
-    [Category("money")]
-    public class StockMarketProjectionTests
-    {        
-        [Test]
-        [Ignore("powody")]
-        public void ShouldProjectShortTerm()
-        {
-            var sut = new StockMarketProjection();
+namespace AttributesDemo.Tests.DataDrivenTests {
+	[TestFixture]
+	[Category("money")]
+	public class StockMarketProjectionTests {
+		[Test]
+		[Ignore("powody")]
+		public void ShouldProjectShortTerm() {
+			var sut = new StockMarketProjection();
 
-            var marketValue = sut.CalculateShortTerm();
+			var marketValue = sut.CalculateShortTerm();
 
-            Assert.That(marketValue, Is.EqualTo(200));
-        }
+			Assert.That(marketValue, Is.EqualTo(200));
+		}
 
 
-        [Test]
-        [Category("long")]
-        [MaxTime(5500)]
-        public void ShouldProjectLongTerm()
-        {
-            var sut = new StockMarketProjection();
+		[Test]
+		[Category("long")]
+		[MaxTime(5500)]
+		public void ShouldProjectLongTerm() {
+			var sut = new StockMarketProjection();
 
-            var marketValue = sut.CalculateLongTerm();
+			var marketValue = sut.CalculateLongTerm();
 
-            Assert.That(marketValue, Is.EqualTo(50));
-        }
-    }
+			Assert.That(marketValue, Is.EqualTo(50));
+		}
+	}
 }

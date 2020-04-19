@@ -35,3 +35,4 @@
 - [ASP.NET MVC Pattern](https://dotnet.microsoft.com/apps/aspnet/mvc)
 - [Overview of ASP.NET Core MVC](https://docs.microsoft.com/en-gb/aspnet/core/mvc/overview?view=aspnetcore-3.1)
 - [CodeProject: Learn MVC Project in 7 days](https://www.codeproject.com/Articles/866143/Learn-MVC-Project-in-days-Day)
+- [Yogi Hosting: ASP.NET Core](https://www.yogihosting.com/aspnet-core-introduction/)

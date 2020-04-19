@@ -5,12 +5,9 @@ namespace AssertDemo {
 	public class PlayerCharacter {
 		public PlayerCharacter() {
 			Name = GenerateName();
-
 			IsNoob = true;
-
 			CreateStartingWeapons();
 		}
-
 		public int Health { get; set; }
 		public string Name { get; private set; }
 		public string NickName { get; set; }
@@ -38,7 +35,6 @@ namespace AssertDemo {
 				"G'Toth'lop",
 				"Boldrakteethtop"
 			};
-
 			return names[new Random().Next(0, names.Length)];
 		}
 

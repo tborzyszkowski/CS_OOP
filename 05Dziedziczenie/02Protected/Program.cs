@@ -13,7 +13,6 @@ namespace _02Protected {
 	class Pochodna : Bazowa {
 		public void F(Pochodna p) {
 			//int a = p.a; //Błąd, nie mamy dostępu do składowych prywatnych
-			//klasy bazowej
 			int b = p.b; //OK
 			int c = p.c; //OK, składowe publiczne
 		}
