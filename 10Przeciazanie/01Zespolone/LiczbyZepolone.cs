@@ -16,9 +16,6 @@ namespace _01Zespolone
 		{
 		}
 
-		//definicja domyślnego konstruktora jest niedozwolona
-		//public Zepolona()
-
 		public static Zespolona operator +(Zespolona x) => x;
 		
 		public static Zespolona operator -(Zespolona x)
@@ -28,7 +25,6 @@ namespace _01Zespolone
 			y.Im = -x.Im;
 			return y;
 		}
-		//operator ~ będzie wyznaczał liczbę sprzężoną
 		public static Zespolona operator ~(Zespolona x)
 		{
 			Zespolona y = new Zespolona();
@@ -36,7 +32,6 @@ namespace _01Zespolone
 			y.Im = -x.Im;
 			return y;
 		}
-		//operator ! będzie wyznaczał moduł liczby zespolone
 		public static double operator !(Zespolona x)
 		{
 			return Math.Sqrt(x.Re * x.Re + x.Im * x.Im);
