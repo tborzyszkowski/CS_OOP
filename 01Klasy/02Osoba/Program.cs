@@ -20,7 +20,7 @@ namespace _02Osoba {
 			k.UstawRokUrodzenia(1989);
 
 			Console.WriteLine($"k - {k.PobierzInformacje()}");
-			Console.WriteLine($"m - {m.PobierzInformacje()}");
+			Console.WriteLine($"m - {m.PobierzInformacje()}"); 
 			//k.CzyKobieta();     //błąd kompilacji
 
 			#region Zadanie 2
