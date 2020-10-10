@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Osoba.cs" />
     <Compile Include="Osoba2.cs" />
+    <Compile Include="Parent.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

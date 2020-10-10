@@ -12,7 +12,6 @@ namespace TDD2Test
 		public void Setup()
 		{
 			_sut = new RPN();
-
 		}
 		[Test]
 		public void CheckIfTestWorks()

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace _02Osoba {
-	partial class Osoba {
+	partial class Osoba : Parent {
 		public string Imie;
 		public string Nazwisko;
 		private int rokUrodzenia;
@@ -24,7 +24,7 @@ namespace _02Osoba {
 				else
 					tytul = "Pan";
 			}
-			return $"{tytul} {Imie} {Nazwisko} ur. w {rokUrodzenia} roku.";
+			return $"{tytul} {Imie} {Nazwisko} ur. w {rokUrodzenia} roku. Coś {cos}";
 		}
 
 		public void UstawRokUrodzenia(int rokUrodzenia) {
