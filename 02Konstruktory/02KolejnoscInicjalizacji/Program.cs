@@ -37,7 +37,7 @@ namespace _02KolejnoscInicjalizacji
 		static void Main(string[] args)
 		{
 			Pierwsza p1 = new Pierwsza { x = 5 };
-			Druga d1 = new Druga() { P = new Pierwsza() { x = 6 }, Y = 33 };
+			  Druga d1 = new Druga() { P = new Pierwsza() { x = 6 }, Y = 33 };
 
 			Console.WriteLine($"p1.x = {p1.x}");
 			Console.WriteLine($"d1.y = {d1.Y}, d1.p.x = {d1.P.x}");

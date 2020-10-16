@@ -45,7 +45,7 @@ namespace _01Czolg
 		{
 		}
 
-		public string ToString() =>
+		public override string ToString() =>
 			$"Czołg\n nr:\t{numerCzolgu}\n o nazwie: {nazwa}\t hash: {this.GetHashCode()}" +
 			$"\n kaliber działa: {dzialo.GetKaliber()}\t hash: {this.dzialo.GetHashCode()}" +
 			$"\n znajduje się w punkcie: ({pozycja.GetX()}; {pozycja.GetY()})\n";
