@@ -28,14 +28,17 @@ namespace _01Instrumenty
 
 			instr.Graj1();      //zawsze Cisza
 			instr.Graj2();      // nie wiadomo, "użytkownik wybiera"
-			Console.WriteLine($"{instr.GetType()}");
-			Console.WriteLine($"{((Instrument)instr).GetType()}");
+			Console.WriteLine($"instr.GetType(): {instr.GetType()}");
+			Console.WriteLine($"((Instrument)instr).GetType(): {((Instrument)instr).GetType()}");
 			//((Traba)instr).Dmuchaj();
 			(instr as Traba)?.Dmuchaj();
 			Traba tr = new Traba();
 			tr.Graj1();
+			instr = new Traba();
 			Console.WriteLine(tr.Equals(instr));
 			Console.WriteLine(tr == instr);
+			Console.WriteLine(tr.GetHashCode());
+			Console.WriteLine(instr.GetHashCode());
 		}
 	}
 }

@@ -9,7 +9,7 @@ namespace _04Zoo {
 		private Zwierze zwierze;
 		public int Menu() {
 			Console.WriteLine($"Twój aktualkny wybór to {zwierze}\n");
-			Console.WriteLine("1 - Dżwięki wydawane przez zwierzę");
+			Console.WriteLine("1 - Dźwięki wydawane przez zwierzę");
 			Console.WriteLine("2 - Nazwa łacińska");
 			Console.WriteLine("3 - Powrót do menu główne");
 			int i;

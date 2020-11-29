@@ -76,13 +76,22 @@ namespace _01Czolg
 			return new Czolg(this);
 		}
 
-		public Czolg(Czolg prototyp)
-		{
-			numerCzolgu = prototyp.numerCzolgu;
-			nazwa = prototyp.nazwa;
-			dzialo = new Dzialo(prototyp.dzialo);
-			pozycja = prototyp.pozycja;
-		}
+		//public Czolg(Czolg prototyp)
+		//{
+		//	numerCzolgu = prototyp.numerCzolgu;
+		//	nazwa = prototyp.nazwa;
+		//	dzialo = new Dzialo(prototyp.dzialo);
+		//	pozycja = prototyp.pozycja;
+		//}
+
+		public Czolg(Czolg prototyp) :
+			this(
+				prototyp.numerCzolgu, 
+				prototyp.nazwa, 
+				prototyp.dzialo.GetKaliber(), 
+				prototyp.pozycja.GetX(), 
+				prototyp.pozycja.GetY())
+		{ }
 		#endregion
 
 	}

@@ -14,13 +14,12 @@ namespace _01Instrumenty
 		{
 			Console.WriteLine("Instrument.Graj2: Cisza 2!!!");
 		}
-		//public override bool Equals(object o) {
-		//	return this.waga == (o as Instrument)?.waga;
-		//}
-		public override bool Equals(object obj)
-		{
-			return obj is Instrument instrument &&
-				   waga == instrument.waga;
+		public override bool Equals(object o) {
+			return this.waga == (o as Instrument)?.waga;
 		}
+		//public override bool Equals(object obj) {
+		//	return obj is Instrument instrument &&
+		//		   waga == instrument.waga;
+		//}
 	}
 }

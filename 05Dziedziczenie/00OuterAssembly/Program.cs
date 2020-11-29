@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 
 namespace _00OuterAssembly {
 	public class ZewnetrznaOuter {
-		internal protected void f() {
+		internal protected void fInternalProtected() {
 			Console.WriteLine("Outside.Zewnetrzna.f()");
+			//DrugaOuter dro = new DrugaOuter();
+			//dro.g();
 		}
+		internal void fInternal() { }
+		protected void fProtected() { }
 	}
 
 	public class DrugaOuter {
 		void g() {
-			new ZewnetrznaOuter().f();
+			new ZewnetrznaOuter().fInternalProtected();
 		}
 	}
 }

@@ -17,7 +17,9 @@ namespace _01InternalProtected {
 	//}
 	class Wewnetrzna : ZewnetrznaOuter {
 		internal void g() {
-			f();
+			fInternalProtected();
+			//fInternal();
+			fProtected();
 			Console.WriteLine("InternalProtected.Wewnetrzna.g()");
 		}
 	}

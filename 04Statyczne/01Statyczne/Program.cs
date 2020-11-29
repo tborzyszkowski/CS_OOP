@@ -17,8 +17,8 @@ namespace _01Statyczne {
 			a++;
 			//b++;
 		}
-		public void wypisz() {
-			Console.WriteLine($"a = {a}, b = {b}");
+		public override string ToString() {
+			return $"a = {a}, b = {b}";
 		}
 	}
 	class Program {
@@ -26,16 +26,17 @@ namespace _01Statyczne {
 			Console.WriteLine($"Pierwsza.a = {Pierwsza.a}");
 
 			Pierwsza p = new Pierwsza(2, 3);
-			p.wypisz();
+
+			Console.WriteLine(p);
 			Console.WriteLine($"Pierwsza.a = {Pierwsza.a}");
 
 			Pierwsza.a = 19;
-			p.wypisz();
+			Console.WriteLine(p);
 			Console.WriteLine($"Pierwsza.a = {Pierwsza.a}");
 
 			Pierwsza q = new Pierwsza(12, 13);
-			q.wypisz();
-			p.wypisz();
+			Console.WriteLine(q);
+			Console.WriteLine(p);
 			Console.WriteLine($"Pierwsza.a = {Pierwsza.a}");
 		}
 	}
