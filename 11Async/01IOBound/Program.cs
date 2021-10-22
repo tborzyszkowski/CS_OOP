@@ -47,8 +47,8 @@ namespace _01IOBound {
 			int count = 0;
 			while (ad.result.Length == 0)
 			{
-				//Console.Write(".");
-				//Thread.Sleep(1);
+				Console.Write(".");
+				Thread.Sleep(1);
 				count++;
 			}
 

@@ -94,12 +94,7 @@ namespace _01Zespolone
 			return x.Re;
 		}
 
-		public static implicit operator Zespolona(double d)
-		{
-			Zespolona x = new Zespolona();
-			x.Re = d;
-			return x;
-		}
+		public static implicit operator Zespolona(double d) => new Zespolona(d);
 		public override string ToString()
 		{
 			return $"({this.Re}, {this.Im})";

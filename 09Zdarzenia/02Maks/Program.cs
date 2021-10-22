@@ -33,7 +33,7 @@ namespace _02Maks
 
 		public ListMax(List<T> list, Comparison<T> comp) : this(list)
 		{
-			this.list = list;
+			//this.list = list;
 			comparator += comp;
 		}
 

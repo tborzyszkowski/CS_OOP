@@ -43,7 +43,7 @@ namespace Demo02.Tests
 
 				//Assert
 				mockCustomerRepository.Verify(x => x.Save(It.IsAny<Customer>()),
-					Times.Exactly(listOfCustomerDtos.Count));
+					Times.AtLeast(listOfCustomerDtos.Count));
 			}
 		}
 	}

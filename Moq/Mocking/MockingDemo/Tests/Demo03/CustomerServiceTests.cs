@@ -15,7 +15,7 @@ namespace Demo03.Tests
 			{
 				//Arrange
 				var customerToCreateDto = new CustomerToCreateDto
-				{ FirstName = "Bob", LastName = "Builder" };
+					{ FirstName = "Bob", LastName = "Builder" };
 				var mockAddressBuilder = new Mock<ICustomerAddressBuilder>();
 				var mockCustomerRepository = new Mock<ICustomerRepository>();
 

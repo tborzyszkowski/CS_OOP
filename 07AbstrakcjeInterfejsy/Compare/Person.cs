@@ -22,8 +22,7 @@ namespace Compare
 			return "Person { Name = " + Name + ", Age = " + Age + " }";
 		}
 
-		public int CompareTo(Person other)
-		{
+		public int CompareTo(Person other) {
 			if (this.Name.CompareTo(other.Name) == 0)
 			{
 				if (this.Age > other.Age) return 1;

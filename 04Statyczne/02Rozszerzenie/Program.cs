@@ -17,7 +17,7 @@ namespace _02Rozszerzenie {
 			return iloczyn;
 		}
 		public static Type GetType(this double x, int a) {
-			return ((int)(a)).GetType();
+			return ((int)(x)).GetType();
 		}
 	}
 
@@ -27,6 +27,8 @@ namespace _02Rozszerzenie {
 			Console.WriteLine($"{x} do potęgi drugiej: {x.Potega(2).Potega(2)}");
 			Console.WriteLine($"10 do potęgi minus drugiej: {(10.0).Potega(-2).Potega(-1)}");
 			Type z = x.GetType(2);
+			Console.WriteLine(z);
+
 		}
 	}
 }

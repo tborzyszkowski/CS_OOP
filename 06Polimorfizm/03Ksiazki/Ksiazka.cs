@@ -45,7 +45,7 @@ namespace _03Ksiazki {
 
 		public override int GetHashCode()
 		{
-			return Isbn != null ? Isbn.GetHashCode() : ToString().GetHashCode();
+			return Isbn != null ? Isbn.GetHashCode() : ToString().GetHashCode() + base.GetHashCode();
 		}
 	}
 }

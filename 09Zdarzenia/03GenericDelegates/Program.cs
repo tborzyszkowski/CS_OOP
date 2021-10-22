@@ -42,7 +42,7 @@ namespace _03GenericDelegates
 			gd.IterAction += gd.IterOne;
 
 			gd.IterAction(6);
-			gd.IterAction -= gd.IterOne;
+			//gd.IterAction -= gd.IterOne;
 			gd.IterAction += gd.IterTwo;
 			gd.IterAction(6);
 
