@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace _03Structures {
 	class Pierwsza {
 		public int X = 0;
-		public static bool Addition(out int p, out int q) {
-			p = 30;
-			q = 40;
-			p += p;
-			q += q;
-			return p > q;
-		}
+		//public static bool Addition(out int p, out int q) {
+		//	p = 30;
+		//	q = 40;
+		//	p += p;
+		//	q += q;
+		//	return p > q;
+		//}
 	}
 
 	struct First {
@@ -40,8 +40,8 @@ namespace _03Structures {
 			Console.WriteLine($"x = {x}, y = {y}");
 
 			int pierwsza = 0, druga = 0;
-			bool result = Pierwsza.Addition(out pierwsza, out druga);
-			Console.WriteLine($"{result} - {pierwsza} - {druga}");
+			//bool result = Pierwsza.Addition(out pierwsza, out druga);
+			//Console.WriteLine($"{result} - {pierwsza} - {druga}");
 
 		}
 	}

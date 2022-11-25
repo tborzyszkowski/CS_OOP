@@ -15,7 +15,7 @@ namespace _02Osoba {
 				sw = new StreamWriter(nazwa);
 				sw.WriteLine($"Numer zapisu: {iloscZapisow}");
 				sw.WriteLine($"Imie: {Imie}\nNazwisko: {Nazwisko}");
-				sw.WriteLine($"Rok urodzenia: {rokUrodzenia}");
+				sw.WriteLine($"Rok urodzenia: {rokUrodzenia}"); 
 			}
 			finally
 			{

@@ -11,6 +11,7 @@ namespace _01Instrumenty
 		static void Main(string[] args)
 		{
 			Instrument instr = new Instrument();
+			//((Beben)instr).Graj1();
 			Console.WriteLine("A - trąba");
 			Console.WriteLine("B - bęben");
 			char c = Console.ReadKey().KeyChar;

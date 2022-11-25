@@ -23,7 +23,7 @@ namespace _03Ksiazki {
 		public Ksiazka(string imie, string nazwisko, string tytul) :
 			this(imie, nazwisko, tytul, 2000, "ABC", null) { }
 
-		public override string ToString() => string.Format($"{Autor.Nazwisko} {Autor.Imie[0]}., \"{Tytul}\", {Wydawnictwo}, {RokWydania}, {Isbn}");
+		public override string ToString() => $"{Autor.Nazwisko} {Autor.Imie[0]}., \"{Tytul}\", {Wydawnictwo}, {RokWydania}, {Isbn}";
 
 		public override bool Equals(object obj) {
 			if (obj == null) return false;

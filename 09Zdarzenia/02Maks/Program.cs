@@ -13,29 +13,34 @@ namespace _02Maks
 		private List<T> list;
 		private Comparison<T> comparator;
 
-		public ListMax()
+		public ListMax(List<T> list = null, Comparison<T> comp = default(Comparison<T>)) 
 		{
-			list = new List<T>();
-			comparator += (a, b) => a.CompareTo(b);
+			if (list != null) this.list = list; else this.list = new List<T>();
+			if (comp != null) this.comparator = comp; else this.comparator += (a, b) => a.CompareTo(b);
 		}
+		//public ListMax()
+		//{
+		//	list = new List<T>();
+		//	comparator += (a, b) => a.CompareTo(b);
+		//}
 
-		public ListMax(List<T> list)
-		{
-			this.list = list;
-			comparator += (a, b) => a.CompareTo(b);
-		}
+		//public ListMax(List<T> list)
+		//{
+		//	this.list = list;
+		//	comparator += (a, b) => a.CompareTo(b);
+		//}
 
-		public ListMax(Comparison<T> comp)
-		{
-			list = new List<T>();
-			comparator += comp;
-		}
+		//public ListMax(Comparison<T> comp)
+		//{
+		//	list = new List<T>();
+		//	comparator += comp;
+		//}
 
-		public ListMax(List<T> list, Comparison<T> comp) : this(list)
-		{
-			//this.list = list;
-			comparator += comp;
-		}
+		//public ListMax(List<T> list, Comparison<T> comp) : this(list)
+		//{
+		//	//this.list = list;
+		//	comparator += comp;
+		//}
 
 		public ListMax<T> Add(T item)
 		{
@@ -65,11 +70,11 @@ namespace _02Maks
 		{
 			ListMax<int> intList = (new ListMax<int>()).Add(1).Add(6).Add(3);
 			Console.WriteLine($"Max = {intList.GetMax()}");
-			intList = (new ListMax<int>((a, b) => b.CompareTo(a))).Add(1).Add(6).Add(3);
+			intList = (new ListMax<int>(comp: (a, b) => b.CompareTo(a))).Add(1).Add(6).Add(3);
 			Console.WriteLine($"Max = {intList.GetMax()}");
 			ListMax<string> strList = (new ListMax<string>()).Add("Ala").Add("Zuza").Add("Hermenegilda");
 			Console.WriteLine($"Max = {strList.GetMax()}");
-			strList = (new ListMax<string>((a, b) => a.Length.CompareTo(b.Length))).Add("Ala").Add("Zuza").Add("Hermenegilda");
+			strList = (new ListMax<string>(comp: (a, b) => a.Length.CompareTo(b.Length))).Add("Ala").Add("Zuza").Add("Hermenegilda");
 			Console.WriteLine($"Max = {strList.GetMax()}");
 		}
 	}

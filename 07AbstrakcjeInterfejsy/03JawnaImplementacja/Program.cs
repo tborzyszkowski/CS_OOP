@@ -40,7 +40,7 @@ namespace _03JawnaImplementacja {
 			(p as IPilkarz)?.Strzelaj();
 			p = new Postac();
 			(p as IZolnierz)?.Strzelaj();
-
+			((p as IPilkarz) as IZolnierz)?.Strzelaj();
 			if (p is Postac)
 				p?.Strzelaj();
 			if (p is HashSet<Postac>)

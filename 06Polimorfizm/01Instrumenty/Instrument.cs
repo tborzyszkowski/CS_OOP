@@ -17,9 +17,5 @@ namespace _01Instrumenty
 		public override bool Equals(object o) {
 			return this.waga == (o as Instrument)?.waga;
 		}
-		//public override bool Equals(object obj) {
-		//	return obj is Instrument instrument &&
-		//		   waga == instrument.waga;
-		//}
 	}
 }

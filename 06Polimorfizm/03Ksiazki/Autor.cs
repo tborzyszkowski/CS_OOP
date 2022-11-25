@@ -14,7 +14,7 @@ namespace _03Ksiazki {
 
 		public override bool Equals(object obj) =>
 			obj is Autor autor &&
-			Imie == autor.Imie &&
-			Nazwisko == autor.Nazwisko;
+			this.Imie == autor.Imie &&
+			this.Nazwisko == autor.Nazwisko;
 	}
 }

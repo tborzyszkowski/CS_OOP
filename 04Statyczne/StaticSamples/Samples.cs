@@ -8,12 +8,12 @@ namespace StaticSamples {
 	public class Samples {
 		static int pole;
 
-		static Samples() {
-			pole = 10;
-		}
-
-		//static Samples(int a) {
-		//	pole = 11;
+		//static Samples() {
+		//	pole = 10;
 		//}
+
+		static Samples() {
+			pole = 11;
+		}
 	}
 }

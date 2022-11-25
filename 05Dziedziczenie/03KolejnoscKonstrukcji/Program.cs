@@ -27,7 +27,6 @@ namespace _03KolejnoscKonstrukcji {
 			Console.WriteLine($"Konstruktor z C: {i}");
 		}
 	}
-
 	class KonstrDemo {
 		static void Main(string[] args) {
 			new CK(5);

@@ -70,7 +70,6 @@ namespace ProgramGlowny
 				{
 					if (typ.IsPublic && !typ.IsAbstract)
 					{
-
 						Type interfejsy = typ.GetInterface("PluginInterfejs.IMojPlugin", true);
 						if (interfejsy != null)
 						{
@@ -78,7 +77,6 @@ namespace ProgramGlowny
 							{
 								if (CzyZaladowac(typ))
 								{
-
 									IMojPlugin tmp = (IMojPlugin)Activator.CreateInstance(zestaw.GetType(typ.ToString()));
 									zaladowaneWtyczki.Add(tmp);
 								}
@@ -88,7 +86,6 @@ namespace ProgramGlowny
 								Console.WriteLine($"Typ {typ} załadowany");
 								Console.ReadKey();
 							}
-
 						}
 					}
 				}

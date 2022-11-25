@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using _00OuterAssembly;
+using Outside;
 
 namespace _01InternalProtected {
-	//class Wewnetrzna
-	//{
-	//	internal void g()
-	//	{
+	//class Wewnetrzna {
+	//	internal void g() {
 	//		Zewnetrzna z = new Zewnetrzna();
 	//		z.fff();
 	//		Console.WriteLine("InternalProtected.Wewnetrzna.g()");

@@ -28,7 +28,6 @@ namespace _02Rozszerzenie {
 			Console.WriteLine($"10 do potęgi minus drugiej: {(10.0).Potega(-2).Potega(-1)}");
 			Type z = x.GetType(2);
 			Console.WriteLine(z);
-
 		}
 	}
 }

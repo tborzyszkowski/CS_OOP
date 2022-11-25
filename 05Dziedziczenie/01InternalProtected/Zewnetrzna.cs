@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace _01InternalProtected{ 
-	//Outside {
-	class Zewnetrzna {
+namespace //_01InternalProtected{ 
+	Outside {
+	internal class Zewnetrzna {
 		internal void fff() {
 			Console.WriteLine("Outside.Zewnetrzna.f()");
 		}

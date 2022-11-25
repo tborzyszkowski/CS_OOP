@@ -21,7 +21,7 @@ namespace _03SortedDictionary
 				};
 			try
 			{
-				openWith.Add("BMP", "paint.exe");
+				openWith.Add("BMP", "paint_new.exe");
 			}
 			catch (ArgumentException)
 			{

@@ -42,20 +42,11 @@ namespace TestOsoby
 			}
 
 			Osoba[] osoby2 = null;
-			try
+			using (fs = new FileStream("osoby.dat", FileMode.Open))
 			{
-				fs = new FileStream("osoby.dat", FileMode.Open);
 				osoby2 = (Osoba[])formater.Deserialize(fs);
 			}
-			catch (Exception ex)
-			{
-				Console.WriteLine($"Uwaga wyjątek: {ex.Message}!!!");
-			}
-			finally
-			{
-				if (fs != null)
-					fs.Close();
-			}
+
 			foreach (Osoba o in osoby2)
 			{
 				Console.WriteLine($"Imię: {o.Imie}, nazwisko: {o.Nazwisko}, ile by miał lat: {o.Wiek}");
