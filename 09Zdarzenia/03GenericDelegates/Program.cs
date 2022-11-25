@@ -45,7 +45,12 @@ namespace _03GenericDelegates
 			gd.Relation += gd.RelSample1;
 			Console.WriteLine(gd.Relation(1));
 			gd.Relation -= gd.RelSample1;
-			gd.Relation += (x) => x < 3;
+			gd.Relation += x => x < 1;
+			Func<int, bool> fff = (x) => x < 3;
+			gd.Relation += fff;
+			gd.Relation -= fff;
+			//gd.Relation += (x) => x < 3;
+			//gd.Relation -= (x) => x < 3;
 			Console.WriteLine(gd.Relation(1));
 			gd.Relation += gd.PropEven;
 			Console.WriteLine(gd.Relation(1));
