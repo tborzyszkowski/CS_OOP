@@ -21,7 +21,8 @@ namespace _01IOBound {
 
 			// Execution of GetFirstCharactersCountAsync() is yielded to the caller here
 			// GetStringAsync returns a Task<string>, which is *awaited*
-			var page = await client.GetStringAsync("http://www.dotnetfoundation.org");
+			//var page = await client.GetStringAsync("http://www.dotnetfoundation.org");
+			var page = await client.GetStringAsync("http://cnn.com");
 
 			// Execution resumes when the client.GetStringAsync task completes,
 			// becoming synchronous again.
@@ -36,7 +37,7 @@ namespace _01IOBound {
 			}
 		}
 		public async Task getPage() {
-			await Task.Run(() => result = GetFirstCharactersCountAsync(50000).Result);
+			await Task.Run(() => result = GetFirstCharactersCountAsync(500000).Result);
 		}
 	}
 	class Program {

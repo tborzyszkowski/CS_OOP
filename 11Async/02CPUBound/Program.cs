@@ -10,10 +10,10 @@ namespace _02CPUBound {
 		public double resultAsc = 100;
 		private double DoExpensiveCalculation(double data) {
 			double result = data;
-			while (result > 0.000000001)
+			while (result > 0.00000000001)
 			{
 				result = result / 2;
-				Thread.Sleep(100);
+				//Thread.Sleep(100);
 			}
 			return result;
 		}
@@ -43,7 +43,7 @@ namespace _02CPUBound {
 			while (acpu.resultAsc > 0.00000001)
 			{
 				Console.Write(".");
-				Thread.Sleep(1);
+				//Thread.Sleep(1);
 				count++;
 			}
 			Console.WriteLine($"Count:  {count}");

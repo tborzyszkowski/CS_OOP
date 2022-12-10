@@ -12,7 +12,7 @@ namespace _01Zespolone
 			Console.WriteLine($"{z2}");
 
 			double x = 20;
-			Zespolona z3 = x + 30;
+			Zespolona z3 = x + 30.5;
 			Console.WriteLine($"{z3}");
 			Console.WriteLine($"{(double)z3}");
 			Console.WriteLine($"{(int)z3}");

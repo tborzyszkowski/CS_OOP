@@ -71,13 +71,15 @@ namespace ConsoleApplication1
 			sejf2.Alarm += new AlarmEventHandler(s1.GonZlodzieja);
 			sejf2.Alarm += new AlarmEventHandler(s2.GonZlodzieja);
 			sejf1.OtworzSejf(5678);
-			Console.ReadKey(true);
+			//Console.ReadKey(true);
 			sejf2.OtworzSejf(8765);
-			Console.ReadKey(true);
+			//Console.ReadKey(true);
 
 			sejf2.Alarm -= new AlarmEventHandler(s1.GonZlodzieja);
 			sejf2.OtworzSejf(8765);
-			Console.ReadKey(true);
+			//Console.ReadKey(true);
+			sejf2.Alarm -= new AlarmEventHandler(s2.GonZlodzieja);
+			sejf2.OtworzSejf(8765);
 		}
 	}
 }

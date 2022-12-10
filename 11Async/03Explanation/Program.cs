@@ -14,7 +14,7 @@ namespace _03Explanation {
 			for (int i = 0; i < 100; i++)
 			{
 				Console.WriteLine($"Robię coś {i}");
-				Thread.Sleep(1);
+				//Thread.Sleep(1);
 			}
 		}
 		// Three things to note in the signature: 
@@ -58,7 +58,7 @@ namespace _03Explanation {
 			while (expl.result < 0)
 			{
 				Console.Write(".");
-				Thread.Sleep(10);
+				//Thread.Sleep(10);
 				count++;
 			}
 			Console.WriteLine(count);
