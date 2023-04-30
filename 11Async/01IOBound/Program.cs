@@ -22,7 +22,7 @@ namespace _01IOBound {
 			// Execution of GetFirstCharactersCountAsync() is yielded to the caller here
 			// GetStringAsync returns a Task<string>, which is *awaited*
 			//var page = await client.GetStringAsync("http://www.dotnetfoundation.org");
-			var page = await client.GetStringAsync("http://cnn.com");
+			var page = await client.GetStringAsync("http://abc.com");
 
 			// Execution resumes when the client.GetStringAsync task completes,
 			// becoming synchronous again.

@@ -32,6 +32,7 @@ namespace _03DniTygodnia {
 			DayCollection week = new DayCollection();
 			System.Console.WriteLine(week["Fri"]);
 			System.Console.WriteLine(week["Made-up Day"]);
+			//week["Made-up Day"] = 7;
 		}
 	}
 }
