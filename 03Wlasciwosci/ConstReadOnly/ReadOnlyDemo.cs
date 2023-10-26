@@ -12,6 +12,7 @@ namespace ConstReadOnly {
 		public ReadOnlyDemo(int value)
 		{
 			this.value = value;
+			//this.value = 7;
 		}
 		//public void meth() {
 		//	this.value = 8;
