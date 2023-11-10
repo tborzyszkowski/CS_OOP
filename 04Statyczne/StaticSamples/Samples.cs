@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace StaticSamples {
 	public class Samples {
-		static int pole;
+		static int pole = 5;
 
 		//static Samples() {
 		//	pole = 10;
 		//}
 
 		static Samples() {
-			pole = 11;
+			pole += 11;
 		}
 	}
 }

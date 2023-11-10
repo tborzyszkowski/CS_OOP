@@ -6,28 +6,25 @@ using System.Threading.Tasks;
 
 namespace _04ZgodnoscTypow {
 	class A {
-		public int x;
+		public int X { get; set; }
 		
 		//public A(int a) {
-		//	this.x = 1;
+		//	this.X = 1;
 		//}
-		public void setA(int x) {
-			this.x = x;
-		}
+		
 
 	}
 	class B : A {
-		public int x;
+		public int X { get; set; }
 		public B() {
-			this.x = 2;
-		}
-		public void setB(int a, int b) {
-			this.x = a;
-			base.x = b;
+			this.X = 2;
 		}
 		
+		public void setBaseX(int value) {
+			base.X = value;
+		}
 		public override string ToString() {
-			return $"B: x = {x}, base.x = {base.x}";
+			return $"B: x = {X}, base.X= {base.X}";
 		}
 	}
 	class Program {
@@ -35,10 +32,11 @@ namespace _04ZgodnoscTypow {
 			A pa = new A();
 			B pb = new B();
 
-			pa.setA(5);
-			pb.setB(15, 16);
+			pa.X = 5;
+			pb.X = 15;
+			pb.setBaseX(16);
 
-			Console.WriteLine($"A: pa.x = {pa.x}");
+			Console.WriteLine($"A: pa.x = {pa.X}");
 			Console.WriteLine(pb);
 			Console.WriteLine(pa.GetType());
 			Console.WriteLine(pb.GetType());
@@ -46,7 +44,7 @@ namespace _04ZgodnoscTypow {
 			pa = pb;
 			//pb = pa;
 
-			Console.WriteLine($"A: pa.x = {pa.x}");
+			Console.WriteLine($"A: pa.x = {pa.X}");
 			Console.WriteLine(pb);
 			Console.WriteLine(pa.GetType());
 			Console.WriteLine(pb.GetType());

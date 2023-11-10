@@ -17,12 +17,13 @@ namespace _03KolejnoscKonstrukcji {
 		public BK(int i) : base(i + 1) {
 			Console.WriteLine($"Konstruktor z B: {i}");
 		}
-		public BK() : base() {
+		public BK() //: base()
+		{
 			Console.WriteLine("Konstruktor z B()");
 		}
 	}
 	class CK : BK {
-		public CK(int i) : base(2 * i) //: base()
+		public CK(int i) : base() //: base(2 * i)//: base()
 		{
 			Console.WriteLine($"Konstruktor z C: {i}");
 		}

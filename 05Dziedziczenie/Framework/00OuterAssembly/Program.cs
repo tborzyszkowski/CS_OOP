@@ -11,7 +11,7 @@ namespace _00OuterAssembly {
 			//DrugaOuter dro = new DrugaOuter();
 			//dro.g();
 		}
-		internal void fInternal() { }
+		internal protected void fInternal() { }
 		protected void fProtected() { }
 	}
 
