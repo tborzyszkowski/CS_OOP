@@ -8,7 +8,7 @@ namespace _02Protected {
 	class Bazowa {
 		private int a;
 		//protected int b;
-		internal protected int b;
+        protected int b;
 		public int c;
 	}
 	class Pochodna : Bazowa {
@@ -19,7 +19,7 @@ namespace _02Protected {
 		}
 		public void G(Bazowa p) {
 			//int a = p.a;
-			int b = p.b;
+			//int b = p.b;
 			int c = p.c;
 		}
 	}

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace _03JawnaImplementacja {
 	interface IPilkarz {
@@ -41,7 +39,8 @@ namespace _03JawnaImplementacja {
 			p = new Postac();
 			(p as IZolnierz)?.Strzelaj();
 			((p as IPilkarz) as IZolnierz)?.Strzelaj();
-			if (p is Postac)
+            p = null;
+			if (p is null)//(p is Postac)
 				p?.Strzelaj();
 			if (p is HashSet<Postac>)
 				p = null;

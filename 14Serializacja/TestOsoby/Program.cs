@@ -7,8 +7,7 @@ namespace TestOsoby
 {
 	class Program
 	{
-		static void Main(string[] args)
-		{
+		static void Main(string[] args) {
 			Osoba[] osoby =
 			{
 				new Osoba(1912,"password")
@@ -24,6 +23,8 @@ namespace TestOsoby
 					Imie="Edgar", Nazwisko="Codd"
 				}
 			};
+			PrintArrayOfOsoby(osoby);
+
 			BinaryFormatter formater = new BinaryFormatter();
 			FileStream fs = null;
 			try
@@ -47,15 +48,19 @@ namespace TestOsoby
 				osoby2 = (Osoba[])formater.Deserialize(fs);
 			}
 
-			foreach (Osoba o in osoby2)
-			{
-				Console.WriteLine($"Imię: {o.Imie}, nazwisko: {o.Nazwisko}, ile by miał lat: {o.Wiek}");
-				Console.WriteLine($"\thasło password: {o.SprawdzHaslo("password")}");
-				Console.WriteLine($"\thasło {o.Imie}{o.Nazwisko}: {o.SprawdzHaslo(o.Imie + o.Nazwisko)}");
-			}
+			PrintArrayOfOsoby(osoby2);
 
 			Console.WriteLine("--Koniec--");
 			Console.ReadKey();
+		}
+
+		private static void PrintArrayOfOsoby(Osoba[] osoby) {
+			foreach (Osoba o in osoby)
+			{
+				Console.WriteLine($"Imię: {o.Imie}\t nazwisko: {o.Nazwisko}\t ile by miał lat: {o.Wiek}");
+				Console.WriteLine($"\thasło password: {o.SprawdzHaslo("password")}");
+				Console.WriteLine($"\thasło {o.Imie}{o.Nazwisko}: {o.SprawdzHaslo(o.Imie + o.Nazwisko)}");
+			}
 		}
 	}
 }

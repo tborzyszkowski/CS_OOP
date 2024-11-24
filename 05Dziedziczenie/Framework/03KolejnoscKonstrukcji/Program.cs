@@ -9,7 +9,8 @@ namespace _03KolejnoscKonstrukcji {
 		public AK(int i) {
 			Console.WriteLine($"Konstruktor z A: {i}");
 		}
-		public AK() {
+		public AK()// : this(7)
+        {
 			Console.WriteLine("Konstruktor z A()");
 		}
 	}
@@ -17,7 +18,7 @@ namespace _03KolejnoscKonstrukcji {
 		public BK(int i) : base(i + 1) {
 			Console.WriteLine($"Konstruktor z B: {i}");
 		}
-		public BK() //: base()
+		public BK() : this(5)//: base()
 		{
 			Console.WriteLine("Konstruktor z B()");
 		}

@@ -58,7 +58,7 @@ namespace _03Explanation {
 			while (expl.result < 0)
 			{
 				Console.Write(".");
-				//Thread.Sleep(10);
+				Thread.Sleep(1);
 				count++;
 			}
 			Console.WriteLine(count);

@@ -9,37 +9,35 @@ namespace _01Instrumenty
 	class Program
 	{
 		static void Main(string[] args)
-		{
-			Instrument instr = new Instrument();
-			//((Beben)instr).Graj1();
+        {
+            Instrument instrument = new Instrument();
 			Console.WriteLine("A - trąba");
 			Console.WriteLine("B - bęben");
 			char c = Console.ReadKey().KeyChar;
-			//instr.Graj2();
-			// ((Traba)instr).Dmuchaj();
+			
 			switch (c)
 			{
 				case 'a':
-					instr = new Traba();
+					instrument = new Traba();
 					break;
 				case 'b':
-					instr = new Beben();
+					instrument = new Beben();
 					break;
 			}
 
-			instr.Graj1();      //zawsze Cisza
-			instr.Graj2();      // nie wiadomo, "użytkownik wybiera"
-			Console.WriteLine($"instr.GetType(): {instr.GetType()}");
-			Console.WriteLine($"((Instrument)instr).GetType(): {((Instrument)instr).GetType()}");
+			instrument.Graj1();      //zawsze Cisza
+			instrument.Graj2();      // nie wiadomo, "użytkownik wybiera"
+			Console.WriteLine($"instr.GetType(): {instrument.GetType()}");
+			Console.WriteLine($"((Instrument)instr).GetType(): {((Instrument)instrument).GetType()}");
 			//((Traba)instr).Dmuchaj();
-			(instr as Traba)?.Dmuchaj();
+			(instrument as Traba)?.Dmuchaj();
 			Traba tr = new Traba();
 			tr.Graj1();
-			instr = new Traba();
-			Console.WriteLine(tr.Equals(instr));
-			Console.WriteLine(tr == instr);
+			instrument = new Traba();
+			Console.WriteLine(tr.Equals(instrument));
+			Console.WriteLine(tr == instrument);
 			Console.WriteLine(tr.GetHashCode());
-			Console.WriteLine(instr.GetHashCode());
+			Console.WriteLine(instrument.GetHashCode());
 		}
 	}
 }

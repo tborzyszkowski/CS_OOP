@@ -10,9 +10,16 @@ namespace Compare
 	{
 		public int Compare(Person x, Person y)
 		{
-			if (x.Age > y.Age) return 1;
-			else if (x.Age < y.Age) return -1;
-			else return x.Name.CompareTo(y.Name);
-		}
+            if ((x != null) && (y != null))
+            {
+                if (x.Age > y.Age) return 1;
+                else if (x.Age < y.Age) return -1;
+                else return String.Compare(x.Name, y.Name);
+            }
+            if ((x is null) && (y != null)) { return -1; }
+            if (x != null) { return 1; }
+
+            return 0;
+        }
 	}
 }

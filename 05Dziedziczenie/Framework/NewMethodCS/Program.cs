@@ -24,7 +24,7 @@ namespace NewMethodCS {
 	class Program {
 		static void Main(string[] args) {
 			A a = new A();
-			B c = new B();
+			B bb = new B();
 
 			a.F();
 			a.G();

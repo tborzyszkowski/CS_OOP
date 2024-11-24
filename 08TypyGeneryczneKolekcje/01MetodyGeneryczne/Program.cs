@@ -11,10 +11,11 @@ namespace _01MetodyGeneryczne
 	{
 		public static void Swap<T>(ref T a, ref T b)
 		{
-			T tmp = a;
-			a = b;
-			b = tmp;
-		}
+			//T tmp = a;
+			//a = b;
+			//b = tmp;
+            (a, b) = (b, a);
+        }
 		public static T Max<T>(T a, T b) where T : IComparable
 		{
 			return a.CompareTo(b) > 0 ? a : b;

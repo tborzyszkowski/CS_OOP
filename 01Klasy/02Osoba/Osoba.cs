@@ -10,6 +10,7 @@ namespace _02Osoba {
 		public string Nazwisko;
 		private int rokUrodzenia;
 
+		#region Zadanie 1
 		private bool CzyKobieta() {
 			if (!Imie.EndsWith("a")) return false;
 			return true;
@@ -32,7 +33,7 @@ namespace _02Osoba {
 				throw new ArgumentException("Osoba musi być pełnoletnia");
 			this.rokUrodzenia = rokUrodzenia;
 		}
-
+		#endregion
 		#region Zadanie 2
 		private int iloscZapisow = 0;
 		public int PobierzLiczbeZapisow() {

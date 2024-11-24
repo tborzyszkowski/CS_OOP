@@ -29,7 +29,7 @@ namespace _01Base {
 
 	class Program {
 		static void Main(string[] args) {
-			NextBase nb;
+			NextBase nb; // = new NextBase();
 			OJeden oj = new OJeden();
 			ODwa od = new ODwa();
 

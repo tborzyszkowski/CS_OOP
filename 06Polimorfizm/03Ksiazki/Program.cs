@@ -22,6 +22,8 @@ namespace _03Ksiazki {
 			Console.WriteLine($"ToString: {k2}");
 			Console.WriteLine($"GetHashCode: {k3.GetHashCode()}");
 			Console.WriteLine($"ToString: {k3}");
-		}
+            Console.WriteLine($"GetHashCode: {k4.GetHashCode()}");
+            Console.WriteLine($"ToString: {k4}");
+        }
 	}
 }

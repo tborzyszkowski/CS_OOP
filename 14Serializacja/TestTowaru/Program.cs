@@ -7,8 +7,7 @@ namespace TestTowaru
 {
 	class Program
 	{
-		static void Main(string[] args)
-		{
+		static void Main(string[] args) {
 			Towar[] oferta =
 			{
 				new Towar()
@@ -24,6 +23,8 @@ namespace TestTowaru
 					Nazwa="Truskawki", CenaDetaliczna=3.8m, CenaHurtowa=1.6m, IdTowaru=4
 				},
 			};
+			PrintTableOfTowar(oferta);
+
 			XmlSerializer serializer = new XmlSerializer(typeof(Towar[]));
 			FileStream fs = null;
 			try
@@ -58,13 +59,21 @@ namespace TestTowaru
 			}
 			foreach (Towar t in kopiaOferty)
 			{
-				Console.Write($"Towar {t.Nazwa}, cena detaliczna - {t.CenaDetaliczna}, ");
-				Console.WriteLine($"cena hurtowa - {t.CenaHurtowa}, id towaru - {t.IdTowaru}");
+				Console.Write($"Towar:{t.Nazwa}\t cena detaliczna: {t.CenaDetaliczna}\t ");
+				Console.WriteLine($"cena hurtowa: {t.CenaHurtowa}\t id towaru: {t.IdTowaru}");
 			}
 
 			Console.WriteLine("--Koniec--");
 			Console.ReadKey();
 
+		}
+
+		private static void PrintTableOfTowar(Towar[] oferta) {
+			foreach (Towar t in oferta)
+			{
+				Console.Write($"Towar:{t.Nazwa}\t cena detaliczna: {t.CenaDetaliczna}\t ");
+				Console.WriteLine($"cena hurtowa: {t.CenaHurtowa}\t id towaru: {t.IdTowaru}");
+			}
 		}
 	}
 }
