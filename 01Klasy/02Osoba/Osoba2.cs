@@ -10,18 +10,26 @@ namespace _02Osoba {
 		partial void zapisz(int licznik) {
 			StreamWriter sw = null;
 			string nazwa = string.Format($"{Imie}{Nazwisko}{iloscZapisow}.txt");
-			try
-			{
-				sw = new StreamWriter(nazwa);
-				sw.WriteLine($"Numer zapisu: {iloscZapisow}");
-				sw.WriteLine($"Imie: {Imie}\nNazwisko: {Nazwisko}");
-				sw.WriteLine($"Rok urodzenia: {rokUrodzenia}"); 
-			}
-			finally
-			{
-				if (sw != null)
-					sw.Close();
-			}
+            using (sw = new StreamWriter(nazwa))
+            {
+                try
+                {
+
+                    sw.WriteLine($"Numer zapisu: {iloscZapisow}");
+                    sw.WriteLine($"Imie: {Imie}\nNazwisko: {Nazwisko}");
+                    sw.WriteLine($"Rok urodzenia: {rokUrodzenia}");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
+
+            //         finally
+			//{
+			//	if (sw != null)
+			//		sw.Close();
+			//}
 		}
 	}
 

@@ -72,7 +72,7 @@ namespace _02Maks
 			Console.WriteLine($"Max = {intList.GetMax()}");
 			intList = (new ListMax<int>(comp: (a, b) => b.CompareTo(a))).Add(1).Add(6).Add(3);
 			Console.WriteLine($"Max = {intList.GetMax()}");
-			ListMax<string> strList = (new ListMax<string>()).Add("Ala").Add("Zuza").Add("Hermenegilda");
+			ListMax<string> strList = (new ListMax<string>()).Add("Ala").Add("Zuza").Add("Hermenegilda").Add("Łucja");
 			Console.WriteLine($"Max = {strList.GetMax()}");
 			strList = (new ListMax<string>(comp: (a, b) => a.Length.CompareTo(b.Length))).Add("Ala").Add("Zuza").Add("Hermenegilda");
 			Console.WriteLine($"Max = {strList.GetMax()}");

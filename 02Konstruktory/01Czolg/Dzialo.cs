@@ -19,7 +19,7 @@ namespace _01Czolg
 
 		public Dzialo(Dzialo prototyp)
 		{
-			kaliber = prototyp.kaliber;
+			this.kaliber = prototyp.kaliber;
 		}
 		#endregion
 	}

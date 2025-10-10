@@ -56,7 +56,8 @@ namespace _01Czolg {
 			return this.MemberwiseClone() as Czolg;
 		}
 
-		public object Clone() {
+		public object Clone()
+		{
 			//return this.MemberwiseClone();
 			return new Czolg(this);
 		}

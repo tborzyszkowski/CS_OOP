@@ -8,7 +8,7 @@ namespace LabInvoice.Tests
 	class RepositoryBasicTests
 	{
 		[Test]
-		public void the_repository_remove_should_be_called()
+		public void the_repository_add_should_be_called()
 		{
 			var mockRepository = new Mock<IRepository<Invoice>>();
 

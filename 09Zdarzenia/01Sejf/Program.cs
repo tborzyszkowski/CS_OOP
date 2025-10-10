@@ -52,7 +52,7 @@ namespace ConsoleApplication1
 		{
 			for (int i = 0; i < 100; i++)
 			{
-				Console.Beep(1000 + 10 * i, 10);
+				Console.Beep(2000 + 10 * i, 10);
 			}
 			Console.WriteLine("BEEP \t BEEP \t BEEP");
 		}
