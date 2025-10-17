@@ -1,7 +1,7 @@
 ﻿namespace PrivateProperty {
 
 	internal class Property {
-		private int _x { get; public set; } = 0;
+		 internal int _x { get;  set; } = 0;
 	}
 	internal class Program {
 		static void Main(string[] args) {

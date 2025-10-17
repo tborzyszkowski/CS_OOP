@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace _03DniTygodnia {
 	class DayCollection {
 		string[] days = { "Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat" };
