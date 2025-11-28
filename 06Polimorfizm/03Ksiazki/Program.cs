@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 namespace _03Ksiazki {
 	class Program {
 		static void Main(string[] args) {
-			Ksiazka k1 = new Ksiazka("Aleksander", "Fredro", "Zemsta"),
+			Ksiazka 
+                k1 = new Ksiazka("Aleksander", "Fredro", "Zemsta"),
 				k2 = new Ksiazka("Aleksander", "Fredro", "Zemsta"),
 				k3 = new Ksiazka("Jan", "Kowalski", "ABC", 2000, "DEF", "123456"),
 				k4 = new Ksiazka("Adam", "Kos", "XYZ", 2001, "QWERTY", "123456");

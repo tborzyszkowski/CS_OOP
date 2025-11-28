@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ConstReadOnly {
 	class ReadOnlyDemo
 	{
-		public readonly int value;
+		public readonly int value = 0;
 
 		public ReadOnlyDemo(int value)
 		{

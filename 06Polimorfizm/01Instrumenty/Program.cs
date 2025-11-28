@@ -34,7 +34,9 @@ namespace _01Instrumenty
 			Traba tr = new Traba();
 			tr.Graj1();
 			instrument = new Traba();
-			Console.WriteLine(tr.Equals(instrument));
+            //((Instrument)instrument).Dmuchaj();
+
+            Console.WriteLine(tr.Equals(instrument));
 			Console.WriteLine(tr == instrument);
 			Console.WriteLine(tr.GetHashCode());
 			Console.WriteLine(instrument.GetHashCode());

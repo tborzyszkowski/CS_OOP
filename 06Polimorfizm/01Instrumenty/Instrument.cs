@@ -17,5 +17,8 @@ namespace _01Instrumenty
 		public override bool Equals(object o) {
 			return this.waga == (o as Instrument)?.waga;
 		}
-	}
+		public override int GetHashCode() {
+			return waga;
+        }
+    }
 }

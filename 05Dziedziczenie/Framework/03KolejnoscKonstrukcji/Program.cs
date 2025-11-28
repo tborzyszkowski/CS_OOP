@@ -24,7 +24,7 @@ namespace _03KolejnoscKonstrukcji {
 		}
 	}
 	class CK : BK {
-		public CK(int i) : base() //: base(2 * i)//: base()
+		public CK(int i) : base(2 * i)//: base()
 		{
 			Console.WriteLine($"Konstruktor z C: {i}");
 		}
