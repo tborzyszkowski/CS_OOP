@@ -255,6 +255,45 @@ public class DecimalHelperTests
         // Assert
         Assert.False(result);
     }
+    
+    [Fact]
+    public void NegativeZero_IsValid_AndEqualToPositiveZero()
+    {
+        // Arrange
+        decimal negativeZero = -0.000m;
+        decimal positiveZero = 0.000m;
+        decimal zero = 0m;
+        
+        // Act
+        bool isValid = DecimalHelper.IsValidDecimal(negativeZero);
+        bool equalsPositiveZero = (negativeZero == positiveZero);
+        bool equalsZero = (negativeZero == zero);
+        
+        // Assert
+        Assert.True(isValid, "Negative zero should be a valid decimal");
+        Assert.True(equalsPositiveZero, "Negative zero should equal positive zero");
+        Assert.True(equalsZero, "Negative zero should equal zero");
+        Assert.Equal(0m, negativeZero);
+    }
+    
+    [Fact]
+    public void NegativeZero_IsNegative_ReturnsFalse()
+    {
+        // Arrange
+        decimal negativeZero = -0.000m;
+        decimal positiveZero = 0.000m;
+        decimal actualNegative = -0.001m;
+        
+        // Act
+        bool negativeZeroIsNegative = decimal.IsNegative(negativeZero);
+        bool positiveZeroIsNegative = decimal.IsNegative(positiveZero);
+        bool actualNegativeIsNegative = decimal.IsNegative(actualNegative);
+        
+        // Assert
+        Assert.False(negativeZeroIsNegative, "decimal.IsNegative(-0.000m) should return false");
+        Assert.False(positiveZeroIsNegative, "decimal.IsNegative(0.000m) should return false");
+        Assert.True(actualNegativeIsNegative, "decimal.IsNegative(-0.001m) should return true");
+    }
 }
 
 public class DecimalExamplesTests
